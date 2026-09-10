@@ -1,10 +1,9 @@
-```html
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game-Download | دانلود بازی</title>
+    <title>The Long Drive | Game-Download</title>
 
     <style>
         * {
@@ -20,7 +19,6 @@
             min-height: 100vh;
         }
 
-        /* نوار بالای سایت */
         header {
             background: linear-gradient(135deg, #0066ff, #00aaff);
             padding: 20px;
@@ -37,7 +35,6 @@
             color: #e8f7ff;
         }
 
-        /* منوی اصلی */
         nav {
             background: #091a2d;
             padding: 15px;
@@ -55,38 +52,37 @@
             border-radius: 10px;
             cursor: pointer;
             font-size: 16px;
-            transition: 0.3s;
         }
 
         .menu-btn:hover {
             background: #00aaff;
-            transform: translateY(-2px);
-            box-shadow: 0 0 15px #008cff;
         }
 
-        /* بخش بازی ها */
+        .home {
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .home h2 {
+            font-size: 35px;
+            color: #22aaff;
+            margin-bottom: 15px;
+        }
+
+        .home p {
+            color: #b8cce0;
+            font-size: 18px;
+        }
+
         #games {
             display: none;
-            max-width: 1100px;
+            max-width: 800px;
             margin: 35px auto;
             padding: 20px;
         }
 
         #games.show {
             display: block;
-            animation: showGames 0.4s ease;
-        }
-
-        @keyframes showGames {
-            from {
-                opacity: 0;
-                transform: translateY(15px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
 
         .section-title {
@@ -96,21 +92,12 @@
             font-size: 28px;
         }
 
-        /* کارت بازی */
         .game-card {
             background: linear-gradient(145deg, #0b2138, #071727);
             border: 1px solid #12548a;
             border-radius: 18px;
             padding: 25px;
-            max-width: 500px;
-            margin: auto;
             box-shadow: 0 0 25px rgba(0, 130, 255, 0.15);
-            transition: 0.3s;
-        }
-
-        .game-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 0 30px rgba(0, 150, 255, 0.35);
         }
 
         .game-image {
@@ -134,7 +121,13 @@
         .game-info {
             color: #c5d8e8;
             line-height: 2;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+        }
+
+        .parts {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
         }
 
         .download-btn {
@@ -154,23 +147,6 @@
             box-shadow: 0 0 20px rgba(0, 170, 255, 0.6);
         }
 
-        /* صفحه اصلی */
-        .home {
-            text-align: center;
-            padding: 80px 20px;
-        }
-
-        .home h2 {
-            font-size: 35px;
-            color: #22aaff;
-            margin-bottom: 15px;
-        }
-
-        .home p {
-            color: #b8cce0;
-            font-size: 18px;
-        }
-
         footer {
             text-align: center;
             margin-top: 60px;
@@ -178,76 +154,144 @@
             background: #071525;
             color: #7190aa;
         }
+
+        @media (max-width: 600px) {
+            .parts {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 
 <body>
 
-    <header>
-        <h1>🎮 Game-Download</h1>
-        <p>مرجع دانلود بازی‌های کم‌حجم</p>
-    </header>
+<header>
+    <h1>🎮 Game-Download</h1>
+    <p>مرجع دانلود بازی</p>
+</header>
 
-    <nav>
-        <button class="menu-btn" onclick="showGames()">🎮 بازی‌ها</button>
-        <button class="menu-btn" onclick="goHome()">🏠 خانه</button>
-    </nav>
+<nav>
+    <button class="menu-btn" onclick="showGames()">🎮 بازی‌ها</button>
+    <button class="menu-btn" onclick="goHome()">🏠 خانه</button>
+</nav>
 
-    <!-- صفحه اصلی -->
-    <section class="home" id="home">
-        <h2>به GameZone خوش آمدید!</h2>
-        <p>اینجا می‌تونی بازی‌های کم‌حجم رو پیدا و دانلود کنی.</p>
-    </section>
+<section class="home" id="home">
+    <h2>به GameZone خوش آمدید!</h2>
+    <p>اینجا می‌تونی بازی‌های مورد علاقه‌ات رو پیدا کنی.</p>
+</section>
 
-    <!-- لیست بازی ها -->
-    <section id="games">
+<section id="games">
 
-        <h2 class="section-title">🎮 بازی‌ها</h2>
+    <h2 class="section-title">🎮 The Long Drive</h2>
 
-        <div class="game-card">
+    <div class="game-card">
 
-            <div class="game-image">
-                The Long Drive
-            </div>
+        <div class="game-image">
+            🚗 The Long Drive
+        </div>
 
-            <h2>The Long Drive</h2>
+        <h2>The Long Drive</h2>
 
-            <!-- حجم بازی را از اینجا تغییر بده -->
-            <div class="game-info">
-                💾 حجم: <strong>اینجا حجم را بنویس</strong><br>
-                🎮 سبک: رانندگی / بقا<br>
-                💻 پلتفرم: PC
-            </div>
+        <div class="game-info">
+            💾 حجم: حدود ۴۰۰ مگابایت<br>
+            🎮 سبک: رانندگی / بقا<br>
+            💻 پلتفرم: PC<br>
+            📦 تعداد پارت‌ها: ۱۶
+        </div>
 
-            <!-- لینک دانلود را بعداً اینجا قرار بده -->
-            <a href="TheLongDrive.zip" download class="download-btn">
-    ⬇️ دانلود بازی
-</a>
-                ⬇️ دانلود بازی
+        <h3 style="color:#29a9ff; margin-bottom:15px;">
+            📥 دانلود پارت‌ها
+        </h3>
+
+        <div class="parts">
+
+            <a href="TheLongDrive.part01.rar" download class="download-btn">
+                ⬇️ دانلود پارت 01
+            </a>
+
+            <a href="TheLongDrive.part02.rar" download class="download-btn">
+                ⬇️ دانلود پارت 02
+            </a>
+
+            <a href="TheLongDrive.part03.rar" download class="download-btn">
+                ⬇️ دانلود پارت 03
+            </a>
+
+            <a href="TheLongDrive.part04.rar" download class="download-btn">
+                ⬇️ دانلود پارت 04
+            </a>
+
+            <a href="TheLongDrive.part05.rar" download class="download-btn">
+                ⬇️ دانلود پارت 05
+            </a>
+
+            <a href="TheLongDrive.part06.rar" download class="download-btn">
+                ⬇️ دانلود پارت 06
+            </a>
+
+            <a href="TheLongDrive.part07.rar" download class="download-btn">
+                ⬇️ دانلود پارت 07
+            </a>
+
+            <a href="TheLongDrive.part08.rar" download class="download-btn">
+                ⬇️ دانلود پارت 08
+            </a>
+
+            <a href="TheLongDrive.part09.rar" download class="download-btn">
+                ⬇️ دانلود پارت 09
+            </a>
+
+            <a href="TheLongDrive.part10.rar" download class="download-btn">
+                ⬇️ دانلود پارت 10
+            </a>
+
+            <a href="TheLongDrive.part11.rar" download class="download-btn">
+                ⬇️ دانلود پارت 11
+            </a>
+
+            <a href="TheLongDrive.part12.rar" download class="download-btn">
+                ⬇️ دانلود پارت 12
+            </a>
+
+            <a href="TheLongDrive.part13.rar" download class="download-btn">
+                ⬇️ دانلود پارت 13
+            </a>
+
+            <a href="TheLongDrive.part14.rar" download class="download-btn">
+                ⬇️ دانلود پارت 14
+            </a>
+
+            <a href="TheLongDrive.part15.rar" download class="download-btn">
+                ⬇️ دانلود پارت 15
+            </a>
+
+            <a href="TheLongDrive.part16.rar" download class="download-btn">
+                ⬇️ دانلود پارت 16
             </a>
 
         </div>
 
-    </section>
+    </div>
 
-    <footer>
-        © 2026 game-download yasin tadayon| تمامی حقوق محفوظ است
-    </footer>
+</section>
 
-    <script>
+<footer>
+    © 2026 GameZone | تمامی حقوق محفوظ است
+</footer>
 
-        function showGames() {
-            document.getElementById("home").style.display = "none";
-            document.getElementById("games").classList.add("show");
-        }
+<script>
 
-        function goHome() {
-            document.getElementById("games").classList.remove("show");
-            document.getElementById("home").style.display = "block";
-        }
+function showGames() {
+    document.getElementById("home").style.display = "none";
+    document.getElementById("games").classList.add("show");
+}
 
-    </script>
+function goHome() {
+    document.getElementById("games").classList.remove("show");
+    document.getElementById("home").style.display = "block";
+}
+
+</script>
 
 </body>
 </html>
-```
