@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>گیم‌دانلود | دانلود بازی</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Tahoma, Arial, sans-serif;
+      background: #0d1020;
+      color: #f5f7ff;
+      line-height: 1.8;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    header {
+      background: linear-gradient(135deg, #171a35, #25134d);
+      border-bottom: 1px solid #393d69;
+      padding: 18px 7%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .logo {
+      color: #a78bfa;
+      font-weight: bold;
+      font-size: 24px;
+    }
+
+    nav a {
+      color: #e6e8ff;
+      margin-right: 18px;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: #a78bfa;
+    }
+
+    .hero {
+      padding: 75px 7%;
+      text-align: center;
+      background:
+        radial-gradient(circle at top right, #46238b 0, transparent 38%),
+        radial-gradient(circle at bottom left, #123b6e 0, transparent 35%);
+    }
+
+    .hero h1 {
+      font-size: clamp(28px, 5vw, 48px);
+      margin-bottom: 12px;
+    }
+
+    .hero p {
+      color: #c7cae7;
+      max-width: 620px;
+      margin: auto;
+    }
+
+    .container {
+      width: min(1150px, 90%);
+      margin: 45px auto;
+    }
+
+    .section-title {
+      font-size: 26px;
+      margin-bottom: 22px;
+      border-right: 5px solid #8b5cf6;
+      padding-right: 12px;
+    }
+
+    .games-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 22px;
+    }
+
+    .game-card {
+      overflow: hidden;
+      background: #171a2d;
+      border: 1px solid #2c3154;
+      border-radius: 16px;
+      transition: 0.25s;
+    }
+
+    .game-card:hover {
+      transform: translateY(-7px);
+      border-color: #8b5cf6;
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .game-image {
+      height: 155px;
+      display: grid;
+      place-items: center;
+      font-size: 58px;
+      background: linear-gradient(135deg, #4834d4, #1e6bb8);
+    }
+
+    .game-card:nth-child(2) .game-image {
+      background: linear-gradient(135deg, #e85d04, #9d0208);
+    }
+
+    .game-card:nth-child(3) .game-image {
+      background: linear-gradient(135deg, #006d77, #0a9396);
+    }
+
+    .game-card:nth-child(4) .game-image {
+      background: linear-gradient(135deg, #8e2de2, #4a00e0);
+    }
+
+    .game-content {
+      padding: 18px;
+    }
+
+    .game-content h3 {
+      margin-bottom: 7px;
+    }
+
+    .game-content p {
+      color: #b8bdd9;
+      font-size: 14px;
+      min-height: 52px;
+    }
+
+    .button {
+      display: inline-block;
+      border: 0;
+      cursor: pointer;
+      background: #8b5cf6;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 9px;
+      margin-top: 15px;
+      font: inherit;
+      transition: 0.2s;
+    }
+
+    .button:hover {
+      background: #7442e8;
+      transform: scale(1.03);
+    }
+
+    .download-button {
+      background: #16a34a;
+      font-size: 17px;
+      padding: 13px 24px;
+    }
+
+    .download-button:hover {
+      background: #15803d;
+    }
+
+    #detail-page {
+      display: none;
+    }
+
+    .detail-box {
+      background: #171a2d;
+      border: 1px solid #30355d;
+      border-radius: 18px;
+      overflow: hidden;
+    }
+
+    .detail-banner {
+      min-height: 230px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, #44218c, #1268a9);
+      font-size: 88px;
+    }
+
+    .detail-content {
+      padding: 28px;
+    }
+
+    .detail-content h2 {
+      margin-bottom: 12px;
+      font-size: 30px;
+    }
+
+    .detail-content p {
+      color: #c1c5df;
+      margin-bottom: 18px;
+    }
+
+    .info-list {
+      list-style: none;
+      background: #101325;
+      border-radius: 10px;
+      padding: 16px;
+      margin: 20px 0;
+    }
+
+    .info-list li {
+      padding: 5px 0;
+      color: #dbe0ff;
+    }
+
+    footer {
+      color: #a9afcf;
+      text-align: center;
+      padding: 28px;
+      margin-top: 50px;
+      border-top: 1px solid #252a49;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        padding: 14px 5%;
+      }
+
+      nav {
+        display: none;
+      }
+
+      .hero {
+        padding: 55px 6%;
+      }
+
+      .detail-content {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo">🎮 گیم‌دانلود</div>
+    <nav>
+      <a href="#" onclick="showHome()">خانه</a>
+      <a href="#games">بازی‌ها</a>
+      <a href="#footer">درباره ما</a>
+    </nav>
+  </header>
+
+  <!-- صفحه اصلی -->
+  <main id="home-page">
+    <section class="hero">
+      <h1>دانلود جدیدترین بازی‌ها</h1>
+      <p>
+        بازی مورد علاقه‌ات را انتخاب کن، توضیحاتش را بخوان و نسخه موردنظر را دانلود کن.
+      </p>
+    </section>
+
+    <section class="container" id="games">
+      <h2 class="section-title">بازی‌های پیشنهادی</h2>
+
+      <div class="games-grid">
+        <article class="game-card">
+          <div class="game-image">🏎️</div>
+          <div class="game-content">
+            <h3>مسابقه سرعت</h3>
+            <p>یک بازی هیجان‌انگیز ماشین‌سواری با مراحل متنوع و گرافیک جذاب.</p>
+            <button class="button" onclick="showGame(1)">ادامه مطلب</button>
+          </div>
+        </article>
+
+        <article class="game-card">
+          <div class="game-image">⚔️</div>
+          <div class="game-content">
+            <h3>نبرد قهرمانان</h3>
+            <p>در دنیایی فانتزی بجنگ، شخصیتت را ارتقا بده و مأموریت‌ها را کامل کن.</p>
+            <button class="button" onclick="showGame(2)">ادامه مطلب</button>
+          </div>
+        </article>
+
+        <article class="game-card">
+          <div class="game-image">🧩</div>
+          <div class="game-content">
+            <h3>پازل هوشمند</h3>
+            <p>مجموعه‌ای از معماهای فکری برای به‌چالش‌کشیدن ذهن و سرگرمی روزانه.</p>
+            <button class="button" onclick="showGame(3)">ادامه مطلب</button>
+          </div>
+        </article>
+
+        <article class="game-card">
+          <div class="game-image">🚀</div>
+          <div class="game-content">
+            <h3>سفر فضایی</h3>
+            <p>به سیاره‌های ناشناخته سفر کن، منابع پیدا کن و سفینه‌ات را ارتقا بده.</p>
+            <button class="button" onclick="showGame(4)">ادامه مطلب</button>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- صفحه جزئیات بازی -->
+  <main id="detail-page">
+    <section class="container">
+      <button class="button" onclick="showHome()">← بازگشت به بازی‌ها</button>
+
+      <div class="detail-box" style="margin-top: 18px;">
+        <div class="detail-banner" id="detail-icon">🎮</div>
+
+        <div class="detail-content">
+          <h2 id="detail-title">نام بازی</h2>
+          <p id="detail-description"></p>
+
+          <ul class="info-list">
+            <li id="detail-size">حجم: —</li>
+            <li id="detail-version">نسخه: —</li>
+            <li id="detail-platform">پلتفرم: —</li>
+          </ul>
+
+          <!-- بعداً آدرس دانلود واقعی را در JavaScript جایگزین کن -->
+          <a id="download-link" class="button download-button" href="#" download>
+            ⬇ دانلود بازی
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer">
+    © ۲۰۲۶ گیم‌دانلود — نسخه آزمایشی سایت دانلود بازی
+  </footer>
+
+  <script>
+    const games = {
+      1: {
+        title: "مسابقه سرعت",
+        icon: "🏎️",
+        description: "مسابقه سرعت یک بازی ماشین‌سواری سریع و مهیج است. در پیست‌های مختلف مسابقه بده، رقیبانت را شکست بده و ماشین‌های جدید باز کن.",
+        size: "حجم: 850 مگابایت",
+        version: "نسخه: 1.0.0",
+        platform: "پلتفرم: ویندوز و اندروید",
+        download: "files/fast-race.zip"
+      },
+      2: {
+        title: "نبرد قهرمانان",
+        icon: "⚔️",
+        description: "قهرمان خودت را انتخاب کن، با دشمنان قدرتمند روبه‌رو شو و در یک ماجراجویی فانتزی، مهارت‌ها و تجهیزات خودت را ارتقا بده.",
+        size: "حجم: 1.2 گیگابایت",
+        version: "نسخه: 2.4.1",
+        platform: "پلتفرم: ویندوز",
+        download: "files/heroes-battle.zip"
+      },
+      3: {
+        title: "پازل هوشمند",
+        icon: "🧩",
+        description: "صدها مرحله پازل برای همه سنین. این بازی با درجه سختی‌های مختلف، یک انتخاب مناسب برای سرگرمی و تقویت تمرکز است.",
+        size: "حجم: 180 مگابایت",
+        version: "نسخه: 1.5.0",
+        platform: "پلتفرم: اندروید",
+        download: "files/smart-puzzle.apk"
+      },
+      4: {
+        title: "سفر فضایی",
+        icon: "🚀",
+        description: "کنترل سفینه را به‌عهده بگیر، کهکشان را کشف کن و در مسیر سفر خود با مأموریت‌ها، سیاره‌ها و خطرهای تازه روبه‌رو شو.",
+        size: "حجم: 2 گیگابایت",
+        version: "نسخه: 0.9.5",
+        platform: "پلتفرم: ویندوز",
+        download: "files/space-journey.zip"
+      }
+    };
+
+    function showGame(id) {
+      const game = games[id];
+
+      document.getElementById("detail-icon").textContent = game.icon;
+      document.getElementById("detail-title").textContent = game.title;
+      document.getElementById("detail-description").textContent = game.description;
+      document.getElementById("detail-size").textContent = game.size;
+      document.getElementById("detail-version").textContent = game.version;
+      document.getElementById("detail-platform").textContent = game.platform;
+      document.getElementById("download-link").href = game.download;
+
+      document.getElementById("home-page").style.display = "none";
+      document.getElementById("detail-page").style.display = "block";
+
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function showHome() {
+      document.getElementById("detail-page").style.display = "none";
+      document.getElementById("home-page").style.display = "block";
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  </script>
+</body>
+</html>
