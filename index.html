@@ -1,910 +1,597 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>موزیک لند | دانلود آهنگ و موزیک</title>
+<title>موزیک لند | دانلود آهنگ و موزیک</title>
 
-    <meta name="description"
-        content="موزیک لند؛ سایت دانلود و پخش آهنگ‌های شاد، فانک، غمگین و ریمیکس.">
+<meta name="description" content="موزیک لند؛ سایت دانلود و پخش آهنگ‌های شاد، فانک، غمگین و ریمیکس.">
+<meta name="keywords" content="موزیک لند, دانلود آهنگ, دانلود موزیک, آهنگ شاد, آهنگ فانک, آهنگ غمگین, ریمیکس">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://land-music.github.io/music-land/">
 
-    <meta name="keywords"
-        content="موزیک لند, دانلود آهنگ, دانلود موزیک, آهنگ شاد, آهنگ فانک, آهنگ غمگین, ریمیکس">
+<style>
+:root {
+    --bg: #0b1020;
+    --card: #151d35;
+    --card2: #1c2745;
+    --purple: #8b5cf6;
+    --pink: #ec4899;
+    --text: #ffffff;
+    --muted: #aab3ca;
+}
 
-    <meta name="robots" content="index, follow">
+* {
+    box-sizing: border-box;
+}
 
-    <link rel="canonical" href="https://land-music.github.io/music-land/">
+html {
+    scroll-behavior: smooth;
+}
 
-    <style>
-        :root {
-            --bg: #0b1020;
-            --card: #151d35;
-            --card2: #1c2745;
-            --purple: #8b5cf6;
-            --pink: #ec4899;
-            --text: #ffffff;
-            --muted: #aab3ca;
-        }
+body {
+    margin: 0;
+    font-family: Tahoma, Arial, sans-serif;
+    background:
+        radial-gradient(circle at top right, #25205a 0, transparent 35%),
+        var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    padding-bottom: 100px;
+}
 
-        * {
-            box-sizing: border-box;
-        }
+a {
+    text-decoration: none;
+    color: inherit;
+}
 
-        html {
-            scroll-behavior: smooth;
-        }
+/* Header */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: rgba(11, 16, 32, 0.88);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
 
-        body {
-            margin: 0;
-            font-family: Tahoma, Arial, sans-serif;
-            background:
-                radial-gradient(circle at top right, rgba(139, 92, 246, 0.18), transparent 35%),
-                radial-gradient(circle at bottom left, rgba(236, 72, 153, 0.12), transparent 35%),
-                var(--bg);
-            color: var(--text);
-        }
+.header-inner {
+    max-width: 1100px;
+    margin: auto;
+    padding: 18px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
 
-        header {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            background: rgba(11, 16, 32, 0.82);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-            padding: 15px 20px;
-        }
+.logo {
+    font-size: 23px;
+    font-weight: bold;
+    white-space: nowrap;
+}
 
-        .header-inner {
-            max-width: 1100px;
-            margin: auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 20px;
-        }
+.logo span {
+    color: var(--pink);
+}
 
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            white-space: nowrap;
-        }
+.search-box {
+    width: 360px;
+}
 
-        .logo span {
-            color: var(--purple);
-        }
+.search-box input {
+    width: 100%;
+    background: var(--card);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 13px;
+    padding: 14px 16px;
+    outline: none;
+    font-size: 15px;
+}
 
-        .search-box {
-            width: 300px;
-        }
+.search-box input:focus {
+    border-color: var(--purple);
+}
 
-        .search-box input {
-            width: 100%;
-            padding: 12px 16px;
-            border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            background: #10172b;
-            color: white;
-            outline: none;
-            font-family: inherit;
-        }
+/* Hero */
+.hero {
+    max-width: 1100px;
+    margin: 35px auto 25px;
+    padding: 0 20px;
+}
 
-        .search-box input:focus {
-            border-color: var(--purple);
-        }
+.hero-content {
+    background:
+        linear-gradient(120deg, rgba(139,92,246,.82), rgba(236,72,153,.45)),
+        url("music-background.jpg") center/cover;
+    border-radius: 24px;
+    padding: 55px 30px;
+}
 
-        .hero {
-            max-width: 1100px;
-            margin: 30px auto;
-            min-height: 300px;
-            padding: 40px;
-            border-radius: 24px;
-            display: flex;
-            align-items: center;
-            background:
-                linear-gradient(
-                    rgba(11, 16, 32, 0.55),
-                    rgba(11, 16, 32, 0.8)
-                ),
-                url("music-background.jpg") center / cover;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
-        }
+.hero h1 {
+    font-size: clamp(28px, 5vw, 48px);
+    margin: 0 0 12px;
+}
 
-        .hero-content {
-            max-width: 650px;
-        }
+.hero p {
+    color: #eee;
+    max-width: 650px;
+    line-height: 2;
+    margin: 0;
+}
 
-        .hero h1 {
-            font-size: 42px;
-            margin: 0 0 15px;
-        }
+/* Categories */
+.categories {
+    max-width: 1100px;
+    margin: 0 auto 35px;
+    padding: 0 20px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
 
-        .hero p {
-            color: #d5daea;
-            font-size: 18px;
-            line-height: 2;
-        }
+.category-btn {
+    cursor: pointer;
+    border: 1px solid rgba(255,255,255,.08);
+    color: var(--muted);
+    background: var(--card);
+    border-radius: 30px;
+    padding: 10px 18px;
+    transition: .25s;
+    font-family: inherit;
+}
 
-        .categories {
-            max-width: 1100px;
-            margin: 20px auto 35px;
-            padding: 0 20px;
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
+.category-btn:hover,
+.category-btn.active {
+    background: linear-gradient(135deg, var(--purple), var(--pink));
+    color: #fff;
+    border-color: transparent;
+}
 
-        .category {
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            background: #151d35;
-            color: white;
-            padding: 10px 18px;
-            border-radius: 999px;
-            cursor: pointer;
-            font-family: inherit;
-            transition: 0.3s;
-        }
+/* Main */
+main {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
 
-        .category:hover,
-        .category.active {
-            background: linear-gradient(135deg, var(--purple), var(--pink));
-            border-color: transparent;
-        }
+.section {
+    margin-bottom: 45px;
+}
 
-        .songs-section {
-            max-width: 1100px;
-            margin: auto;
-            padding: 0 20px 40px;
-        }
+.section-title {
+    margin-bottom: 18px;
+}
 
-        .section-title {
-            font-size: 27px;
-            margin: 35px 0 20px;
-        }
+.section-title h2 {
+    font-size: 22px;
+    margin: 0 0 6px;
+}
 
-        .songs-grid {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 20px;
-            direction: rtl;
-        }
+/* Songs */
+.songs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    direction: rtl;
+}
 
-        .song-card {
-            background: linear-gradient(145deg, #151d35, #10172b);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 18px;
-            overflow: hidden;
-            transition: 0.3s;
-            text-align: right;
-        }
+.song-card {
+    background: linear-gradient(145deg, #151d35, #10172b);
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 18px;
+    overflow: hidden;
+    transition: .3s;
+    text-align: right;
+    display: block;
+}
 
-        .song-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(139, 92, 246, 0.7);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
-        }
+.song-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(139,92,246,.7);
+    box-shadow: 0 12px 30px rgba(0,0,0,.25);
+}
 
-        .cover {
-            width: 100%;
-            height: 230px;
-            background: linear-gradient(135deg, #312e81, #831843);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            font-size: 70px;
-        }
+.cover {
+    width: 100%;
+    height: 230px;
+    background: linear-gradient(135deg, #312e81, #831843);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    font-size: 70px;
+}
 
-        .cover img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            display: block;
-            background: #080d1a;
-        }
+.cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    background: #080d1a;
+}
 
-        .song-info {
-            padding: 18px;
-        }
+.song-info {
+    padding: 18px;
+}
 
-        .song-info h3 {
-            margin: 0 0 8px;
-            font-size: 19px;
-            line-height: 1.7;
-        }
+.song-info h3 {
+    margin: 0 0 8px;
+    font-size: 18px;
+}
 
-        .artist {
-            color: var(--muted);
-            font-size: 14px;
-            margin-bottom: 15px;
-        }
+.song-info p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 14px;
+}
 
-        .song-buttons {
-            display: flex;
-            gap: 8px;
-        }
+.empty {
+    color: var(--muted);
+    text-align: center;
+    padding: 30px;
+    background: rgba(255,255,255,.02);
+    border-radius: 15px;
+}
 
-        .play-btn,
-        .download-btn {
-            flex: 1;
-            border: 0;
-            padding: 11px 8px;
-            border-radius: 10px;
-            cursor: pointer;
-            font-family: inherit;
-            text-decoration: none;
-            text-align: center;
-            font-size: 14px;
-        }
+/* Creator */
+.creator {
+    text-align: center;
+    color: var(--muted);
+    font-size: 15px;
+    padding: 30px 20px 100px;
+}
 
-        .play-btn {
-            background: var(--card2);
-            color: white;
-        }
+.creator strong {
+    color: white;
+}
 
-        .download-btn {
-            background: linear-gradient(135deg, var(--purple), var(--pink));
-            color: white;
-        }
+/* Player */
+.player {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 30;
+    background: rgba(15,23,42,.96);
+    border-top: 1px solid rgba(255,255,255,.08);
+    backdrop-filter: blur(15px);
+    padding: 12px 15px;
+}
 
-        .empty {
-            display: none;
-            text-align: center;
-            color: var(--muted);
-            padding: 40px;
-        }
+.player audio {
+    width: min(1100px, 100%);
+    display: block;
+    margin: auto;
+}
 
-        .creator {
-            text-align: center;
-            color: var(--muted);
-            font-size: 15px;
-            padding: 30px 20px 100px;
-        }
+/* Responsive */
+@media(max-width:900px) {
+    .songs-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
 
-        .creator strong {
-            color: white;
-        }
+@media(max-width:600px) {
+    .header-inner {
+        flex-direction: column;
+        align-items: stretch;
+    }
 
-        .bottom-player {
-            position: fixed;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            z-index: 200;
-            background: rgba(11, 16, 32, 0.95);
-            backdrop-filter: blur(12px);
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
-            padding: 10px 15px;
-        }
+    .search-box {
+        width: 100%;
+    }
 
-        .bottom-player audio {
-            display: block;
-            width: 100%;
-            max-width: 1100px;
-            margin: auto;
-        }
+    .hero-content {
+        padding: 35px 22px;
+    }
 
-        @media (max-width: 900px) {
-            .songs-grid {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
-
-            .hero {
-                margin: 20px;
-            }
-        }
-
-        @media (max-width: 650px) {
-            .header-inner {
-                flex-direction: column;
-            }
-
-            .search-box {
-                width: 100%;
-            }
-
-            .hero {
-                min-height: 260px;
-                padding: 25px;
-            }
-
-            .hero h1 {
-                font-size: 30px;
-            }
-
-            .songs-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    .songs-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
 </head>
 
 <body>
 
-    <!-- هدر -->
-    <header>
-        <div class="header-inner">
+<header>
+    <div class="header-inner">
+        <div class="logo">🎵 موزیک<span>‌لند</span></div>
 
-            <div class="logo">
-                🎵 موزیک<span>‌لند</span>
-            </div>
-
-            <div class="search-box">
-                <input
-                    type="text"
-                    id="searchInput"
-                    placeholder="جستجوی آهنگ..."
-                >
-            </div>
-
+        <div class="search-box">
+            <input id="searchInput" type="text" placeholder="جستجوی آهنگ...">
         </div>
-    </header>
+    </div>
+</header>
 
+<section class="hero">
+    <div class="hero-content">
+        <h1>موزیک لند</h1>
+        <p>
+            دانلود و پخش آنلاین جدیدترین آهنگ‌های شاد، فانک، غمگین و ریمیکس
+        </p>
+    </div>
+</section>
 
-    <!-- هیرو -->
-    <section class="hero">
+<nav class="categories">
+    <button class="category-btn active" data-filter="all">همه</button>
+    <button class="category-btn" data-filter="happy">شاد</button>
+    <button class="category-btn" data-filter="funk">فانک</button>
+    <button class="category-btn" data-filter="sad">غمگین</button>
+    <button class="category-btn" data-filter="remix">ریمیکس</button>
+</nav>
 
-        <div class="hero-content">
+<main>
 
-            <h1>موزیک لند</h1>
+<!-- آهنگ‌های شاد -->
+<section class="section" data-section="happy">
 
-            <p>
-                دانلود و پخش آنلاین جدیدترین آهنگ‌های شاد،
-                فانک، غمگین و ریمیکس در موزیک لند 🎵
-            </p>
-
-        </div>
-
-    </section>
-
-
-    <!-- دسته‌بندی -->
-    <div class="categories">
-
-        <button class="category active" data-category="all">
-            همه آهنگ‌ها
-        </button>
-
-        <button class="category" data-category="happy">
-            🎉 شاد
-        </button>
-
-        <button class="category" data-category="funk">
-            🔥 فانک
-        </button>
-
-        <button class="category" data-category="sad">
-            😢 غمگین
-        </button>
-
-        <button class="category" data-category="remix">
-            🎧 ریمیکس
-        </button>
-
+    <div class="section-title">
+        <h2>🎉 آهنگ‌های شاد</h2>
     </div>
 
-
-    <main class="songs-section">
-
-        <!-- آهنگ‌های شاد -->
-        <section class="music-category" data-section="happy">
-
-            <h2 class="section-title">
-                🎉 آهنگ‌های شاد
-            </h2>
-
-            <div class="songs-grid">
-
-
-                <!-- جشن امشب -->
-                <article class="song-card"
-                    data-category="happy"
-                    data-title="جشن امشب"
-                    data-artist="موزیک لند">
-
-                    <div class="cover">
-                        <img
-                            src="jashn-emshab.jpg"
-                            alt="کاور آهنگ جشن امشب"
-                        >
-                    </div>
-
-                    <div class="song-info">
-
-                        <h3>جشن امشب</h3>
-
-                        <div class="artist">
-                            موزیک لند
-                        </div>
-
-                        <div class="song-buttons">
-
-                            <button
-                                class="play-btn"
-                                onclick="playSong('jashn-emshab.mp3','جشن امشب')">
-                                ▶ پخش
-                            </button>
-
-                            <a
-                                class="download-btn"
-                                href="jashn-emshab.mp3"
-                                download>
-                                دانلود
-                            </a>
-
-                        </div>
-
-                    </div>
-
-                </article>
-
-
-                <!-- دلم سی تنگه یاره -->
-                <article class="song-card"
-                    data-category="happy"
-                    data-title="دلم سی تنگه یاره"
-                    data-artist="موزیک لند">
-
-                    <div class="cover">
-                        🎵
-                    </div>
-
-                    <div class="song-info">
-
-                        <h3>دلم سی تنگه یاره</h3>
-
-                        <div class="artist">
-                            موزیک لند
-                        </div>
-
-                        <div class="song-buttons">
-
-                            <button
-                                class="play-btn"
-                                onclick="playSong('Delom_Sit_Tange_Yare_.mp3','دلم سی تنگه یاره')">
-                                ▶ پخش
-                            </button>
-
-                            <a
-                                class="download-btn"
-                                href="Delom_Sit_Tange_Yare_.mp3"
-                                download>
-                                دانلود
-                            </a>
-
-                        </div>
-
-                    </div>
-
-                </article>
-
-
-                <!-- عاشقم کرده -->
-                <article class="song-card"
-                    data-category="happy"
-                    data-title="عاشقم کرده"
-                    data-artist="بهنام بانی">
-
-                    <div class="cover">
-                        🎵
-                    </div>
-
-                    <div class="song-info">
-
-                        <h3>عاشقم کرده</h3>
-
-                        <div class="artist">
-                            بهنام بانی
-                        </div>
-
-                        <div class="song-buttons">
-
-                            <button
-                                class="play-btn"
-                                onclick="playSong('ashegham-karde.mp3','عاشقم کرده')">
-                                ▶ پخش
-                            </button>
-
-                            <a
-                                class="download-btn"
-                                href="ashegham-karde.mp3"
-                                download>
-                                دانلود
-                            </a>
-
-                        </div>
-
-                    </div>
-
-                </article>
-
-
-                <!-- همه ی دارو ندار منی -->
-                <article class="song-card"
-                    data-category="happy"
-                    data-title="همه ی دارو ندار منی"
-                    data-artist="Savash - Dar O Nadar">
-
-                    <div class="cover">
-                        🎵
-                    </div>
-
-                    <div class="song-info">
-
-                        <h3>همه ی دارو ندار منی</h3>
-
-                        <div class="artist">
-                            Savash - Dar O Nadar
-                        </div>
-
-                        <div class="song-buttons">
-
-                            <button
-                                class="play-btn"
-                                onclick="playSong('siavash.mp3','همه ی دارو ندار منی')">
-                                ▶ پخش
-                            </button>
-
-                            <a
-                                class="download-btn"
-                                href="siavash.mp3"
-                                download>
-                                دانلود
-                            </a>
-
-                        </div>
-
-                    </div>
-
-                </article>
-
-
-                <!-- دلبسته نامت -->
-                <article class="song-card"
-                    data-category="happy"
-                    data-title="دلبسته نامت"
-                    data-artist="موزیک لند">
-
-                    <div class="cover">
-                        🎵
-                    </div>
-
-                    <div class="song-info">
-
-                        <h3>دلبسته نامت</h3>
-
-                        <div class="artist">
-                            موزیک لند
-                        </div>
-
-                        <div class="song-buttons">
-
-                            <button
-                                class="play-btn"
-                                onclick="playSong('delbaste-namat.mp3','دلبسته نامت')">
-                                ▶ پخش
-                            </button>
-
-                            <a
-                                class="download-btn"
-                                href="delbaste-namat.mp3"
-                                download>
-                                دانلود
-                            </a>
-
-                        </div>
-
-                    </div>
-
-                </article>
-
+    <div class="songs-grid">
+
+        <a href="jashn-emshab.html"
+           class="song-card"
+           data-category="happy">
+
+            <div class="cover">
+                <img src="jashn-emshab.jpg"
+                     alt="کاور آهنگ جشن امشب">
             </div>
 
-        </section>
-
-
-        <!-- آهنگ‌های فانک -->
-        <section class="music-category" data-section="funk">
-
-            <h2 class="section-title">
-                🔥 آهنگ‌های فانک
-            </h2>
-
-            <div class="songs-grid">
-
-
-                <!-- MONTAGEM UNKNOWN -->
-                <article class="song-card"
-                    data-category="funk"
-                    data-title="MONTAGEM UNKNOWN"
-                    data-artist="فانک ادیت MONTAGEM UNKNOWN">
-
-                    <div class="cover">
-
-                        <img
-                            src="funk-cover.jpg"
-                            alt="کاور MONTAGEM UNKNOWN">
-
-                    </div>
-
-                    <div class="song-info">
-
-                        <h3>MONTAGEM UNKNOWN</h3>
-
-                        <div class="artist">
-                            فانک ادیت MONTAGEM UNKNOWN
-                        </div>
-
-                        <div class="song-buttons">
-
-                            <button
-                                class="play-btn"
-                                onclick="playSong('MONTAGEM UNKNOWN.mp3','MONTAGEM UNKNOWN')">
-                                ▶ پخش
-                            </button>
-
-                            <a
-                                class="download-btn"
-                                href="MONTAGEM UNKNOWN.mp3"
-                                download>
-                                دانلود
-                            </a>
-
-                        </div>
-
-                    </div>
-
-                </article>
-
-
-                <!-- Funk Na Mira -->
-                <article class="song-card"
-                    data-category="funk"
-                    data-title="DJ VGK1 x Hwungii x rezcaze - funk na mira"
-                    data-artist="DJ VGK1 x Hwungii x rezcaze">
-
-                    <div class="cover">
-
-                        <img
-                            src="na mira.jpg"
-                            alt="کاور Funk Na Mira">
-
-                    </div>
-
-                    <div class="song-info">
-
-                        <h3>
-                            DJ VGK1 x Hwungii x rezcaze - funk na mira
-                        </h3>
-
-                        <div class="artist">
-                            DJ VGK1 x Hwungii x rezcaze
-                        </div>
-
-                        <div class="song-buttons">
-
-                            <button
-                                class="play-btn"
-                                onclick="playSong('DJ VGK1 x Hwungii x rezcaze - funk na mira.mp3','funk na mira')">
-                                ▶ پخش
-                            </button>
-
-                            <a
-                                class="download-btn"
-                                href="DJ VGK1 x Hwungii x rezcaze - funk na mira.mp3"
-                                download>
-                                دانلود
-                            </a>
-
-                        </div>
-
-                    </div>
-
-                </article>
-
+            <div class="song-info">
+                <h3>جشن امشب</h3>
+                <p>موزیک لند</p>
             </div>
 
-        </section>
+        </a>
 
 
-        <!-- غمگین -->
-        <section class="music-category" data-section="sad">
+        <a href="Delom_Sit_Tange_Yare_.html"
+           class="song-card"
+           data-category="happy">
 
-            <h2 class="section-title">
-                😢 آهنگ‌های غمگین
-            </h2>
+            <div class="cover">🎵</div>
 
-            <div class="songs-grid"></div>
+            <div class="song-info">
+                <h3>دلم سی تنگه یاره</h3>
+                <p>موزیک لند</p>
+            </div>
 
-        </section>
-
-
-        <!-- ریمیکس -->
-        <section class="music-category" data-section="remix">
-
-            <h2 class="section-title">
-                🎧 ریمیکس
-            </h2>
-
-            <div class="songs-grid"></div>
-
-        </section>
+        </a>
 
 
-        <div class="empty" id="empty">
-            آهنگی پیدا نشد 😔
+        <a href="ashegham-karde.html"
+           class="song-card"
+           data-category="happy">
+
+            <div class="cover">🎵</div>
+
+            <div class="song-info">
+                <h3>عاشقم کرده</h3>
+                <p>بهنام بانی</p>
+            </div>
+
+        </a>
+
+
+        <a href="siavash.html"
+           class="song-card"
+           data-category="happy">
+
+            <div class="cover">🎵</div>
+
+            <div class="song-info">
+                <h3>همه ی دارو ندار منی</h3>
+                <p>Savash - Dar O Nadar</p>
+            </div>
+
+        </a>
+
+
+        <!-- آهنگ جدید -->
+        <a href="delbaste-namat.html"
+           class="song-card"
+           data-category="happy">
+
+            <div class="cover">🎵</div>
+
+            <div class="song-info">
+                <h3>دلبسته نامت</h3>
+                <p>موزیک لند</p>
+            </div>
+
+        </a>
+
+    </div>
+</section>
+
+
+<!-- آهنگ‌های فانک -->
+<section class="section" data-section="funk">
+
+    <div class="section-title">
+        <h2>🔥 آهنگ‌های فانک</h2>
+    </div>
+
+    <div class="songs-grid">
+
+        <a href="montagem-unknown.html"
+           class="song-card"
+           data-category="funk">
+
+            <div class="cover">
+                <img src="funk-cover.jpg"
+                     alt="کاور MONTAGEM UNKNOWN">
+            </div>
+
+            <div class="song-info">
+                <h3>MONTAGEM UNKNOWN</h3>
+                <p>فانک ادیت MONTAGEM UNKNOWN</p>
+            </div>
+
+        </a>
+
+
+        <a href="funk-na-mira.html"
+           class="song-card"
+           data-category="funk">
+
+            <div class="cover">
+                <img src="na mira.jpg"
+                     alt="کاور funk na mira">
+            </div>
+
+            <div class="song-info">
+                <h3>DJ VGK1 x Hwungii x rezcaze - funk na mira</h3>
+                <p>DJ VGK1 x Hwungii x rezcaze</p>
+            </div>
+
+        </a>
+
+    </div>
+</section>
+
+
+<!-- غمگین -->
+<section class="section" data-section="sad">
+
+    <div class="section-title">
+        <h2>😔 آهنگ‌های غمگین</h2>
+    </div>
+
+    <div class="songs-grid">
+        <div class="empty">
+            فعلاً آهنگی در این بخش قرار نگرفته است.
         </div>
-
-    </main>
-
-
-    <!-- سازنده -->
-    <div class="creator">
-        Created by <strong>Yasin</strong>
     </div>
 
+</section>
 
-    <!-- پلیر پایین -->
-    <div class="bottom-player">
 
-        <audio id="audioPlayer" controls>
-            مرورگر شما از پخش صوت پشتیبانی نمی‌کند.
-        </audio>
+<!-- ریمیکس -->
+<section class="section" data-section="remix">
 
+    <div class="section-title">
+        <h2>🎧 ریمیکس</h2>
     </div>
 
+    <div class="songs-grid">
+        <div class="empty">
+            فعلاً آهنگی در این بخش قرار نگرفته است.
+        </div>
+    </div>
 
-    <script>
+</section>
 
-        const audioPlayer = document.getElementById("audioPlayer");
-
-        const searchInput = document.getElementById("searchInput");
-
-        const categoryButtons =
-            document.querySelectorAll(".category");
-
-        const songCards =
-            document.querySelectorAll(".song-card");
-
-        const sections =
-            document.querySelectorAll(".music-category");
-
-        const empty =
-            document.getElementById("empty");
+</main>
 
 
-        // پخش آهنگ
-        function playSong(file, title) {
+<div class="creator">
+    Created by <strong>Yasin</strong>
+</div>
 
-            audioPlayer.src = file;
 
-            audioPlayer.play();
+<div class="player">
+    <audio id="mainPlayer" controls></audio>
+</div>
 
+
+<script>
+
+const searchInput = document.getElementById("searchInput");
+
+const cards = [
+    ...document.querySelectorAll(".song-card")
+];
+
+const sections = [
+    ...document.querySelectorAll(".section")
+];
+
+const buttons = [
+    ...document.querySelectorAll(".category-btn")
+];
+
+let currentFilter = "all";
+
+
+function filterSongs() {
+
+    const q = searchInput.value
+        .trim()
+        .toLowerCase();
+
+    cards.forEach(card => {
+
+        const text = card.innerText.toLowerCase();
+
+        const matchesSearch =
+            !q || text.includes(q);
+
+        const matchesFilter =
+            currentFilter === "all" ||
+            card.dataset.category === currentFilter;
+
+        card.style.display =
+            (matchesSearch && matchesFilter)
+            ? "block"
+            : "none";
+    });
+
+
+    sections.forEach(section => {
+
+        const visible = [
+            ...section.querySelectorAll(".song-card")
+        ].some(card =>
+            card.style.display !== "none"
+        );
+
+        const hasCards =
+            section.querySelectorAll(".song-card").length > 0;
+
+        if (hasCards) {
+            section.style.display =
+                visible ? "block" : "none";
         }
 
+    });
 
-        // دسته‌بندی
-        categoryButtons.forEach(button => {
-
-            button.addEventListener("click", () => {
-
-                categoryButtons.forEach(btn => {
-                    btn.classList.remove("active");
-                });
-
-                button.classList.add("active");
-
-                const category =
-                    button.dataset.category;
-
-                songCards.forEach(card => {
-
-                    if (
-                        category === "all" ||
-                        card.dataset.category === category
-                    ) {
-
-                        card.style.display = "";
-
-                    } else {
-
-                        card.style.display = "none";
-
-                    }
-
-                });
-
-                sections.forEach(section => {
-
-                    const sectionCategory =
-                        section.dataset.section;
-
-                    if (
-                        category === "all" ||
-                        category === sectionCategory
-                    ) {
-
-                        section.style.display = "";
-
-                    } else {
-
-                        section.style.display = "none";
-
-                    }
-
-                });
-
-            });
-
-        });
+}
 
 
-        // جستجو
-        searchInput.addEventListener("input", () => {
-
-            const query =
-                searchInput.value.trim().toLowerCase();
-
-            let found = false;
-
-            songCards.forEach(card => {
-
-                const title =
-                    card.dataset.title.toLowerCase();
-
-                const artist =
-                    card.dataset.artist.toLowerCase();
-
-                if (
-                    title.includes(query) ||
-                    artist.includes(query)
-                ) {
-
-                    card.style.display = "";
-
-                    found = true;
-
-                } else {
-
-                    card.style.display = "none";
-
-                }
-
-            });
+searchInput.addEventListener(
+    "input",
+    filterSongs
+);
 
 
-            // نمایش بخش‌هایی که آهنگ پیدا شده دارند
-            sections.forEach(section => {
+buttons.forEach(btn => {
 
-                const visibleCards =
-                    section.querySelectorAll(
-                        ".song-card:not([style*='display: none'])"
-                    );
+    btn.addEventListener("click", () => {
 
-                if (query === "") {
+        buttons.forEach(b =>
+            b.classList.remove("active")
+        );
 
-                    section.style.display = "";
+        btn.classList.add("active");
 
-                } else if (visibleCards.length > 0) {
+        currentFilter =
+            btn.dataset.filter;
 
-                    section.style.display = "";
+        filterSongs();
 
-                } else {
+    });
 
-                    section.style.display = "none";
+});
 
-                }
-
-            });
-
-
-            empty.style.display =
-                found ? "none" : "block";
-
-        });
-
-    </script>
+</script>
 
 </body>
 </html>
