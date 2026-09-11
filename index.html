@@ -596,7 +596,9 @@ buttons.forEach(btn => {
 <script type="module">
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-analytics.js";
 import { getDatabase } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-database.js";
+
 
 const firebaseConfig = {
   apiKey: "AIzaSyAY-zwzfne1aggVQ25zbDhyrBFZPsYInUc",
@@ -605,13 +607,17 @@ const firebaseConfig = {
   projectId: "musicland-5628a",
   storageBucket: "musicland-5628a.firebasestorage.app",
   messagingSenderId: "684294755825",
-  appId: "1:684294755825:web:454c0de8efa88dcd3fa050",
-  measurementId: "G-31DMEZRY98"
+  appId: "1:684294755825:web:61c0350aca2d5da53fa050",
+  measurementId: "G-5H9G2YC3KT"
 };
+
 
 const app = initializeApp(firebaseConfig);
 
+const analytics = getAnalytics(app);
+
 const db = getDatabase(app);
+
 
 console.log("Firebase وصل شد ✅");
 
