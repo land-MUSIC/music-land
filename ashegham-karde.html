@@ -34,20 +34,16 @@ var(--bg);
 min-height:100vh;
 }
 
-
 header{
 padding:18px 6%;
 background:rgba(11,16,32,.85);
 border-bottom:1px solid rgba(255,255,255,.08);
 }
 
-
 .logo{
 font-size:25px;
 font-weight:bold;
 }
-
-
 
 main{
 max-width:1000px;
@@ -55,21 +51,14 @@ margin:auto;
 padding:40px 20px 120px;
 }
 
-
-
 .song-page{
-
 background:linear-gradient(145deg,#151d35,#10172b);
 border-radius:22px;
 padding:30px;
 text-align:center;
-
 }
 
-
-
 .cover{
-
 width:100%;
 max-width:500px;
 height:320px;
@@ -77,49 +66,29 @@ margin:auto;
 border-radius:18px;
 overflow:hidden;
 background:#080d1a;
-
 }
 
-
-
 .cover img{
-
 width:100%;
 height:100%;
 object-fit:contain;
-
 }
-
-
 
 h1{
-
 margin:28px 0 10px;
-
 }
-
-
 
 .artist{
-
 color:var(--muted);
 font-size:18px;
-
 }
-
-
 
 audio{
-
 width:100%;
 margin:20px 0;
-
 }
 
-
-
 .download-btn{
-
 display:inline-block;
 padding:14px 28px;
 border-radius:12px;
@@ -127,31 +96,58 @@ background:linear-gradient(135deg,var(--purple),var(--pink));
 color:white;
 text-decoration:none;
 font-weight:bold;
-
 }
 
-
-
 .description{
-
 margin-top:35px;
 color:var(--muted);
 line-height:2;
 text-align:right;
-
 }
 
-
-
 .back{
-
 color:white;
 display:inline-block;
 margin-top:25px;
-
+}
+.comments{
+max-width:1000px;
+margin:30px auto;
+background:var(--card);
+padding:25px;
+border-radius:20px;
 }
 
+.comments input,
+.comments textarea{
+width:100%;
+padding:12px;
+margin:10px 0;
+background:#0b1020;
+color:white;
+border:0;
+border-radius:10px;
+}
 
+.comments textarea{
+height:100px;
+}
+
+.comments button{
+background:#8b5cf6;
+color:white;
+border:0;
+padding:12px 25px;
+border-radius:20px;
+cursor:pointer;
+}
+
+.comment{
+margin-top:15px;
+padding:15px;
+background:#1c2745;
+border-radius:12px;
+}
 </style>
 
 </head>
@@ -169,12 +165,9 @@ margin-top:25px;
 </header>
 
 
-
 <main>
 
-
 <div class="song-page">
-
 
 
 <div class="cover">
@@ -184,17 +177,14 @@ margin-top:25px;
 </div>
 
 
-
 <h1>
 دانلود آهنگ عاشقم کرده
 </h1>
 
 
-
 <div class="artist">
 آهنگ عاشقم کرده
 </div>
-
 
 
 <audio controls>
@@ -204,13 +194,11 @@ margin-top:25px;
 </audio>
 
 
-
 <a class="download-btn" href="ashegham-karde.mp3" download>
 
 ⬇ دانلود آهنگ عاشقم کرده
 
 </a>
-
 
 
 <div class="description">
@@ -219,28 +207,23 @@ margin-top:25px;
 آهنگ عاشقم کرده
 </h2>
 
-
 <p>
 آهنگ عاشقم کرده را در موزیک لند آنلاین گوش دهید و دانلود کنید.
 </p>
 
-
 </div>
-
 
 
 <a class="back" href="index.html">
-
 ← بازگشت به موزیک لند
-
 </a>
-
 
 
 </div>
 
 
-</main><!-- بخش کامنت ها -->
+</main>
+<!-- بخش کامنت ها -->
 
 <div class="comments">
 
@@ -248,13 +231,17 @@ margin-top:25px;
 
 <input id="commentName" placeholder="نام شما">
 
+
 <textarea id="commentText" placeholder="نظر خود را بنویسید"></textarea>
+
 
 <button id="sendComment">
 ارسال نظر
 </button>
 
+
 <div id="commentsList"></div>
+
 
 </div>
 
@@ -342,7 +329,6 @@ time:Date.now()
 });
 
 
-
 document.getElementById("commentName").value="";
 
 document.getElementById("commentText").value="";
@@ -351,7 +337,6 @@ document.getElementById("commentText").value="";
 }
 
 };
-
 
 
 
@@ -388,11 +373,11 @@ ${data.text}
 `;
 
 
-
 });
 
 
 });
+
 
 
 </script>
