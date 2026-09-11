@@ -2,6 +2,7 @@
 <html lang="fa" dir="rtl">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -420,6 +421,61 @@ download
 </div>
 
 
+<!-- دلم سی تنگه یاره -->
+
+<div class="song-card" data-category="happy">
+
+<a
+href="Delom_Sit_Tange_Yare_.html"
+style="text-decoration:none;color:inherit;display:block;"
+>
+
+<div class="cover">
+
+🎵
+
+</div>
+
+<div class="song-info">
+
+<h3>
+دلم سی تنگه یاره
+</h3>
+
+<p>
+موزیک لند
+</p>
+
+</div>
+
+</a>
+
+<div class="song-info" style="padding-top:0;">
+
+<div class="buttons">
+
+<a
+class="play-btn"
+href="Delom_Sit_Tange_Yare_.html"
+>
+▶ ورود به آهنگ
+</a>
+
+<a
+class="download-btn"
+href="Delom_Sit_Tange_Yare_.mp3"
+download
+>
+⬇ دانلود
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+
 <!-- عاشقم کرده -->
 
 <div class="song-card" data-category="happy">
@@ -714,11 +770,14 @@ controls
 
 <script>
 
-const audioPlayer = document.getElementById("audioPlayer");
+const audioPlayer =
+document.getElementById("audioPlayer");
+
 
 function filterSongs(category) {
 
-    const cards = document.querySelectorAll(".song-card");
+    const cards =
+    document.querySelectorAll(".song-card");
 
     cards.forEach(card => {
 
@@ -744,14 +803,16 @@ document
 .getElementById("searchInput")
 .addEventListener("input", function() {
 
-    const search = this.value.toLowerCase();
+    const search =
+    this.value.toLowerCase();
 
-    const cards = document.querySelectorAll(".song-card");
+    const cards =
+    document.querySelectorAll(".song-card");
 
     cards.forEach(card => {
 
         const text =
-            card.innerText.toLowerCase();
+        card.innerText.toLowerCase();
 
         if (text.includes(search)) {
 
