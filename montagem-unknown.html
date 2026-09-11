@@ -2,6 +2,7 @@
 <html lang="fa" dir="rtl">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -102,6 +103,15 @@ audio{
     text-align:right;
 }
 
+.back{
+    color:white;
+    display:inline-block;
+    margin-top:25px;
+}
+
+
+/* کامنت */
+
 .comments{
     max-width:1000px;
     margin:30px auto;
@@ -112,6 +122,7 @@ audio{
 
 .comments input,
 .comments textarea{
+
     width:100%;
     padding:12px;
     margin:10px 0;
@@ -119,46 +130,55 @@ audio{
     color:white;
     border:0;
     border-radius:10px;
+
 }
 
 .comments textarea{
     height:100px;
 }
 
+
 .comments button{
+
     background:#8b5cf6;
     color:white;
     border:0;
     padding:12px 25px;
     border-radius:20px;
     cursor:pointer;
+
 }
 
+
 .comment{
+
     margin-top:15px;
     padding:15px;
     background:#1c2745;
     border-radius:12px;
-}
 
-.back{
-    color:white;
-    display:inline-block;
-    margin-top:25px;
 }
 
 </style>
 
 </head>
 
+
 <body>
 
+
 <header>
-<div class="logo">🎵 موزیک‌لند</div>
+
+<div class="logo">
+🎵 موزیک‌لند
+</div>
+
 </header>
 
 
+
 <main>
+
 
 <div class="song-page">
 
@@ -180,6 +200,7 @@ audio{
 </div>
 
 
+
 <audio controls>
 
 <source src="MONTAGEM UNKNOWN.mp3" type="audio/mpeg">
@@ -187,9 +208,11 @@ audio{
 </audio>
 
 
+
 <a class="download-btn" href="MONTAGEM UNKNOWN.mp3" download>
 ⬇ دانلود آهنگ
 </a>
+
 
 
 <div class="description">
@@ -198,11 +221,13 @@ audio{
 آهنگ MONTAGEM UNKNOWN
 </h2>
 
+
 <p>
 آهنگ MONTAGEM UNKNOWN را در موزیک لند آنلاین گوش دهید و دانلود کنید.
 </p>
 
 </div>
+
 
 
 <a class="back" href="index.html">
@@ -212,10 +237,12 @@ audio{
 
 </div>
 
+
 </main><!DOCTYPE html>
 <html lang="fa" dir="rtl">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -225,146 +252,159 @@ audio{
 
 <style>
 
-:root {
-    --bg:#0b1020;
-    --purple:#8b5cf6;
-    --pink:#ec4899;
-    --muted:#aab3ca;
+:root{
+--bg:#0b1020;
+--purple:#8b5cf6;
+--pink:#ec4899;
+--muted:#aab3ca;
 }
 
 *{
-    box-sizing:border-box;
+box-sizing:border-box;
 }
 
 body{
-    margin:0;
-    font-family:Tahoma,Arial,sans-serif;
-    background:
-    radial-gradient(circle at top right,rgba(139,92,246,.2),transparent 35%),
-    var(--bg);
-    color:white;
-    min-height:100vh;
+margin:0;
+font-family:Tahoma,Arial,sans-serif;
+background:
+radial-gradient(circle at top right,rgba(139,92,246,.25),transparent 35%),
+var(--bg);
+color:white;
+min-height:100vh;
 }
 
 header{
-    padding:18px 6%;
-    background:rgba(11,16,32,.85);
-    border-bottom:1px solid rgba(255,255,255,.08);
+padding:18px 6%;
+background:rgba(11,16,32,.85);
+border-bottom:1px solid rgba(255,255,255,.08);
 }
 
 .logo{
-    font-size:25px;
-    font-weight:bold;
+font-size:25px;
+font-weight:bold;
 }
 
 .logo span{
-    color:var(--purple);
+color:var(--purple);
 }
 
 .container{
-    max-width:900px;
-    margin:auto;
-    padding:40px 20px 120px;
+max-width:900px;
+margin:auto;
+padding:40px 20px 120px;
 }
 
 .music-box{
-    background:linear-gradient(145deg,#151d35,#10172b);
-    border-radius:22px;
-    overflow:hidden;
-    border:1px solid rgba(255,255,255,.08);
+background:linear-gradient(145deg,#151d35,#10172b);
+border-radius:22px;
+overflow:hidden;
 }
 
 .cover{
-    width:100%;
-    height:350px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    background:#080d1a;
+width:100%;
+height:350px;
+background:#080d1a;
+display:flex;
+justify-content:center;
+align-items:center;
 }
 
 .cover img{
-    width:100%;
-    height:100%;
-    object-fit:contain;
+width:100%;
+height:100%;
+object-fit:contain;
 }
 
 .content{
-    padding:30px;
+padding:30px;
 }
 
 h1{
-    font-size:32px;
+font-size:32px;
 }
 
 .artist{
-    color:var(--muted);
-    margin-bottom:20px;
+color:var(--muted);
+margin-bottom:20px;
 }
 
 audio{
-    width:100%;
-    margin:20px 0;
+width:100%;
+margin:20px 0;
 }
 
 .download-btn{
-    display:block;
-    text-align:center;
-    padding:14px;
-    border-radius:12px;
-    color:white;
-    text-decoration:none;
-    background:linear-gradient(135deg,var(--purple),var(--pink));
+display:block;
+text-align:center;
+padding:14px;
+border-radius:12px;
+background:linear-gradient(135deg,var(--purple),var(--pink));
+color:white;
+text-decoration:none;
+font-weight:bold;
+}
+
+.info{
+margin-top:30px;
+color:var(--muted);
+line-height:2;
 }
 
 
 .comments{
-
-    margin-top:40px;
-    background:#151d35;
-    padding:25px;
-    border-radius:20px;
-
+margin-top:40px;
+background:#151d35;
+padding:25px;
+border-radius:20px;
 }
 
 
 .comments input,
 .comments textarea{
 
-    width:100%;
-    padding:12px;
-    margin:10px 0;
-    background:#0b1020;
-    color:white;
-    border:0;
-    border-radius:10px;
+width:100%;
+padding:12px;
+margin:10px 0;
+background:#0b1020;
+color:white;
+border:0;
+border-radius:10px;
 
 }
 
 
 .comments textarea{
-    height:100px;
+height:100px;
 }
 
 
 .comments button{
 
-    background:#8b5cf6;
-    color:white;
-    border:0;
-    padding:12px 25px;
-    border-radius:20px;
-    cursor:pointer;
+background:#8b5cf6;
+color:white;
+border:0;
+padding:12px 25px;
+border-radius:20px;
+cursor:pointer;
 
 }
 
 
 .comment{
 
-    background:#1c2745;
-    margin-top:15px;
-    padding:15px;
-    border-radius:12px;
+background:#1c2745;
+padding:15px;
+margin-top:15px;
+border-radius:12px;
+
+}
+
+
+.back{
+
+color:white;
+display:inline-block;
+margin-top:25px;
 
 }
 
@@ -377,9 +417,11 @@ audio{
 
 
 <header>
+
 <div class="logo">
 🎵 موزیک<span>‌لند</span>
 </div>
+
 </header>
 
 
@@ -391,7 +433,7 @@ audio{
 
 <div class="cover">
 
-<img src="funk-cover.jpg">
+<img src="funk-cover.jpg" alt="MONTAGEM UNKNOWN">
 
 </div>
 
@@ -418,6 +460,24 @@ audio{
 
 <a class="download-btn" href="MONTAGEM UNKNOWN.mp3" download>
 ⬇ دانلود آهنگ MONTAGEM UNKNOWN
+</a>
+
+
+<div class="info">
+
+<h2>
+آهنگ MONTAGEM UNKNOWN
+</h2>
+
+<p>
+آهنگ MONTAGEM UNKNOWN را در موزیک لند آنلاین گوش دهید و دانلود کنید.
+</p>
+
+</div>
+
+
+<a class="back" href="index.html">
+← بازگشت به موزیک لند
 </a>
 
 
