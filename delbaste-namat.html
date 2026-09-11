@@ -11,7 +11,44 @@
     <meta name="robots" content="index, follow">
 
     <link rel="canonical" href="https://land-music.github.io/music-land/delbaste-namat.html">
+.comments{
+max-width:900px;
+margin:30px auto 120px;
+background:#151d35;
+padding:25px;
+border-radius:20px;
+}
 
+.comments input,
+.comments textarea{
+width:100%;
+padding:12px;
+margin:10px 0;
+background:#0b1020;
+color:white;
+border:0;
+border-radius:10px;
+}
+
+.comments textarea{
+height:100px;
+}
+
+.comments button{
+background:#8b5cf6;
+color:white;
+border:0;
+padding:12px 25px;
+border-radius:20px;
+cursor:pointer;
+}
+
+.comment{
+margin-top:15px;
+padding:15px;
+background:#1c2745;
+border-radius:12px;
+}
     <style>
         :root {
             --bg: #0b1020;
@@ -228,12 +265,133 @@
     </div>
 
 </main>
+<!-- بخش کامنت ها -->
 
+<div class="comments">
+
+<h2>💬 نظرات کاربران</h2>
+
+<input id="commentName" placeholder="نام شما">
+
+<textarea id="commentText" placeholder="نظر خود را بنویسید"></textarea>
+
+<button id="sendComment">
+ارسال نظر
+</button>
+
+<div id="commentsList"></div>
+
+</div>
 <div class="player">
     <audio controls>
         <source src="delbaste-namat.mp3" type="audio/mpeg">
     </audio>
 </div>
+<script type="module">
 
+import { initializeApp } 
+from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+
+import {
+getDatabase,
+ref,
+push,
+onValue
+}
+from "https://www.gstatic.com/firebasejs/12.19.0/firebase-database.js";
+
+
+const firebaseConfig = {
+
+apiKey: "AIzaSyAY-zwzfne1aggVQ25zbDhyrBFZPsYInUc",
+
+authDomain: "musicland-5628a.firebaseapp.com",
+
+databaseURL: "https://musicland-5628a-default-rtdb.firebaseio.com",
+
+projectId: "musicland-5628a",
+
+storageBucket: "musicland-5628a.firebasestorage.app",
+
+messagingSenderId: "684294755825",
+
+appId: "1:684294755825:web:61c0350aca2d5da53fa050"
+
+};
+
+
+const app = initializeApp(firebaseConfig);
+
+const db = getDatabase(app);
+
+
+const commentsRef = ref(
+db,
+"comments/delbaste-namat"
+);
+
+
+
+document.getElementById("sendComment").onclick = ()=>{
+
+let name =
+document.getElementById("commentName").value;
+
+let text =
+document.getElementById("commentText").value;
+
+
+if(name && text){
+
+push(commentsRef,{
+name:name,
+text:text,
+time:Date.now()
+});
+
+
+document.getElementById("commentName").value="";
+document.getElementById("commentText").value="";
+
+}
+
+};
+
+
+
+onValue(commentsRef,(snapshot)=>{
+
+const list =
+document.getElementById("commentsList");
+
+list.innerHTML="";
+
+
+snapshot.forEach((item)=>{
+
+let data=item.val();
+
+
+list.innerHTML += `
+
+<div class="comment">
+
+<b>${data.name}</b>
+
+<br>
+
+${data.text}
+
+</div>
+
+`;
+
+});
+
+
+});
+
+
+</script>
 </body>
 </html>
