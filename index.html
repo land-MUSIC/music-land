@@ -590,8 +590,9 @@ buttons.forEach(btn => {
     });
 
 });
-
+    
 </script>
+
 <script type="module">
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
@@ -604,15 +605,16 @@ const firebaseConfig = {
   projectId: "musicland-5628a",
   storageBucket: "musicland-5628a.firebasestorage.app",
   messagingSenderId: "684294755825",
-  appId: "1:684294755825:web:454c0de8efa88dcd3fa050"
+  appId: "1:684294755825:web:454c0de8efa88dcd3fa050",
+  measurementId: "G-31DMEZRY98"
 };
 
 const app = initializeApp(firebaseConfig);
+
 const db = getDatabase(app);
 
 console.log("Firebase وصل شد ✅");
 
-</script>
 </script>
 </body>
 </html>
