@@ -9,307 +9,419 @@
 
 <meta name="description" content="دانلود و پخش آنلاین آهنگ MONTAGEM UNKNOWN در موزیک لند.">
 
-<meta name="keywords" content="MONTAGEM UNKNOWN, آهنگ MONTAGEM UNKNOWN, فانک, دانلود MONTAGEM UNKNOWN, موزیک لند">
-
-<meta name="robots" content="index, follow">
-
-<link rel="canonical" href="https://land-music.github.io/music-land/montagem-unknown.html">
-
 <style>
 
 :root {
-    --bg: #0b1020;
-    --purple: #8b5cf6;
-    --pink: #ec4899;
-    --text: #ffffff;
-    --muted: #aab3ca;
+    --bg:#0b1020;
+    --purple:#8b5cf6;
+    --pink:#ec4899;
+    --muted:#aab3ca;
 }
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+*{
+    box-sizing:border-box;
 }
 
-body {
-    font-family: Tahoma, Arial, sans-serif;
+body{
+    margin:0;
+    font-family:Tahoma,Arial,sans-serif;
+    color:white;
     background:
-        radial-gradient(circle at top right, rgba(139,92,246,0.18), transparent 35%),
-        radial-gradient(circle at bottom left, rgba(236,72,153,0.12), transparent 35%),
-        var(--bg);
-    color: var(--text);
-    min-height: 100vh;
+    radial-gradient(circle at top right,rgba(139,92,246,.25),transparent 35%),
+    var(--bg);
+    min-height:100vh;
 }
 
-header {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    background: rgba(11,16,32,0.85);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(255,255,255,0.08);
+header{
+    padding:18px 6%;
+    background:rgba(11,16,32,.85);
+    border-bottom:1px solid rgba(255,255,255,.08);
 }
 
-.header-inner {
-    max-width: 1200px;
-    margin: auto;
-    padding: 16px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.logo{
+    font-size:24px;
+    font-weight:bold;
 }
 
-.logo {
-    font-size: 25px;
-    font-weight: bold;
+main{
+    max-width:1000px;
+    margin:auto;
+    padding:40px 20px 120px;
 }
 
-.logo span {
-    color: var(--purple);
+.song-page{
+    background:linear-gradient(145deg,#151d35,#10172b);
+    border-radius:22px;
+    padding:30px;
+    text-align:center;
 }
 
-.back-btn {
-    background: linear-gradient(135deg, var(--purple), var(--pink));
-    color: white;
-    text-decoration: none;
-    padding: 11px 20px;
-    border-radius: 30px;
+.cover{
+    width:100%;
+    max-width:500px;
+    height:320px;
+    margin:auto;
+    border-radius:18px;
+    overflow:hidden;
+    background:#080d1a;
 }
 
-.container {
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 0 20px 140px;
+.cover img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
 }
 
-.music-box {
-    background: linear-gradient(145deg, #151d35, #10172b);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 22px;
-    overflow: hidden;
+h1{
+    margin:28px 0 10px;
 }
 
-.cover {
-    width: 100%;
-    height: 350px;
-    background: #080d1a;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
+.artist{
+    color:var(--muted);
+    font-size:18px;
 }
 
-.cover img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+audio{
+    width:100%;
+    margin:20px 0;
 }
 
-.content {
-    padding: 30px;
+.download-btn{
+    display:inline-block;
+    padding:14px 28px;
+    border-radius:12px;
+    color:white;
+    text-decoration:none;
+    background:linear-gradient(135deg,var(--purple),var(--pink));
 }
 
-h1 {
-    font-size: 32px;
-    margin-bottom: 12px;
+.description{
+    margin-top:35px;
+    color:var(--muted);
+    line-height:2;
+    text-align:right;
 }
 
-.artist {
-    color: var(--muted);
-    font-size: 17px;
-    margin-bottom: 25px;
+.comments{
+    max-width:1000px;
+    margin:30px auto;
+    background:#151d35;
+    padding:25px;
+    border-radius:20px;
 }
 
-audio {
-    width: 100%;
-    margin-bottom: 20px;
+.comments input,
+.comments textarea{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    background:#0b1020;
+    color:white;
+    border:0;
+    border-radius:10px;
 }
 
-.download-btn {
-    display: block;
-    width: 100%;
-    padding: 14px;
-    border-radius: 12px;
-    background: linear-gradient(135deg, var(--purple), var(--pink));
-    color: white;
-    text-decoration: none;
-    text-align: center;
-    font-weight: bold;
+.comments textarea{
+    height:100px;
 }
 
-.info {
-    margin-top: 35px;
-    line-height: 2.2;
-    color: var(--muted);
+.comments button{
+    background:#8b5cf6;
+    color:white;
+    border:0;
+    padding:12px 25px;
+    border-radius:20px;
+    cursor:pointer;
 }
 
-.info h2 {
-    color: white;
-    margin-bottom: 12px;
+.comment{
+    margin-top:15px;
+    padding:15px;
+    background:#1c2745;
+    border-radius:12px;
 }
 
-.audio-player {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(10,15,30,0.95);
-    padding: 12px 20px;
-}
-
-.player-inner {
-    max-width: 900px;
-    margin: auto;
-}
-
-.player-inner audio {
-    width: 100%;
-    margin: 0;
-}
-
-@media (max-width: 600px) {
-
-    .header-inner {
-        padding: 14px;
-    }
-
-    .logo {
-        font-size: 21px;
-    }
-
-    .container {
-        margin: 20px auto;
-        padding: 0 15px 140px;
-    }
-
-    .cover {
-        height: 280px;
-    }
-
-    .content {
-        padding: 22px;
-    }
-
-    h1 {
-        font-size: 25px;
-    }
-
+.back{
+    color:white;
+    display:inline-block;
+    margin-top:25px;
 }
 
 </style>
+
 </head>
 
 <body>
 
 <header>
-
-<div class="header-inner">
-
-<div class="logo">
-🎵 موزیک<span>‌لند</span>
-</div>
-
-<a class="back-btn" href="index.html">
-← بازگشت به موزیک لند
-</a>
-
-</div>
-
+<div class="logo">🎵 موزیک‌لند</div>
 </header>
 
 
-<main class="container">
+<main>
 
-<article class="music-box">
+<div class="song-page">
+
 
 <div class="cover">
 
-<img
-src="funk-cover.jpg"
-alt="MONTAGEM UNKNOWN"
->
+<img src="funk-cover.jpg">
 
 </div>
 
-
-<div class="content">
 
 <h1>
 دانلود آهنگ MONTAGEM UNKNOWN
 </h1>
 
-<p class="artist">
+
+<div class="artist">
 فانک ادیت MONTAGEM UNKNOWN
-</p>
+</div>
+
 
 <audio controls>
 
-<source
-src="MONTAGEM UNKNOWN.mp3"
-type="audio/mpeg"
->
-
-مرورگر شما از پخش آنلاین آهنگ پشتیبانی نمی‌کند.
+<source src="MONTAGEM UNKNOWN.mp3" type="audio/mpeg">
 
 </audio>
 
 
-<a
-class="download-btn"
-href="MONTAGEM UNKNOWN.mp3"
-download
->
-⬇ دانلود آهنگ MONTAGEM UNKNOWN
+<a class="download-btn" href="MONTAGEM UNKNOWN.mp3" download>
+⬇ دانلود آهنگ
 </a>
 
 
-<div class="info">
+<div class="description">
 
 <h2>
 آهنگ MONTAGEM UNKNOWN
 </h2>
 
 <p>
-در این صفحه می‌توانید آهنگ MONTAGEM UNKNOWN
-را به صورت آنلاین پخش کنید و فایل آهنگ را دانلود کنید.
-</p>
-
-<br>
-
-<p>
-برای جستجوی این آهنگ می‌توانید عبارت‌هایی مانند
-«MONTAGEM UNKNOWN»،
-«آهنگ MONTAGEM UNKNOWN»
-و «دانلود MONTAGEM UNKNOWN»
-را در گوگل جستجو کنید.
+آهنگ MONTAGEM UNKNOWN را در موزیک لند آنلاین گوش دهید و دانلود کنید.
 </p>
 
 </div>
 
+
+<a class="back" href="index.html">
+← بازگشت به موزیک لند
+</a>
+
+
 </div>
 
-</article>
+</main><!DOCTYPE html>
+<html lang="fa" dir="rtl">
 
-</main>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>دانلود آهنگ MONTAGEM UNKNOWN | موزیک لند</title>
+
+<meta name="description" content="دانلود و پخش آنلاین آهنگ MONTAGEM UNKNOWN در موزیک لند.">
+
+<style>
+
+:root {
+    --bg:#0b1020;
+    --purple:#8b5cf6;
+    --pink:#ec4899;
+    --muted:#aab3ca;
+}
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:Tahoma,Arial,sans-serif;
+    background:
+    radial-gradient(circle at top right,rgba(139,92,246,.2),transparent 35%),
+    var(--bg);
+    color:white;
+    min-height:100vh;
+}
+
+header{
+    padding:18px 6%;
+    background:rgba(11,16,32,.85);
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.logo{
+    font-size:25px;
+    font-weight:bold;
+}
+
+.logo span{
+    color:var(--purple);
+}
+
+.container{
+    max-width:900px;
+    margin:auto;
+    padding:40px 20px 120px;
+}
+
+.music-box{
+    background:linear-gradient(145deg,#151d35,#10172b);
+    border-radius:22px;
+    overflow:hidden;
+    border:1px solid rgba(255,255,255,.08);
+}
+
+.cover{
+    width:100%;
+    height:350px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#080d1a;
+}
+
+.cover img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+}
+
+.content{
+    padding:30px;
+}
+
+h1{
+    font-size:32px;
+}
+
+.artist{
+    color:var(--muted);
+    margin-bottom:20px;
+}
+
+audio{
+    width:100%;
+    margin:20px 0;
+}
+
+.download-btn{
+    display:block;
+    text-align:center;
+    padding:14px;
+    border-radius:12px;
+    color:white;
+    text-decoration:none;
+    background:linear-gradient(135deg,var(--purple),var(--pink));
+}
 
 
-<div class="audio-player">
+.comments{
 
-<div class="player-inner">
+    margin-top:40px;
+    background:#151d35;
+    padding:25px;
+    border-radius:20px;
+
+}
+
+
+.comments input,
+.comments textarea{
+
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    background:#0b1020;
+    color:white;
+    border:0;
+    border-radius:10px;
+
+}
+
+
+.comments textarea{
+    height:100px;
+}
+
+
+.comments button{
+
+    background:#8b5cf6;
+    color:white;
+    border:0;
+    padding:12px 25px;
+    border-radius:20px;
+    cursor:pointer;
+
+}
+
+
+.comment{
+
+    background:#1c2745;
+    margin-top:15px;
+    padding:15px;
+    border-radius:12px;
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+<div class="logo">
+🎵 موزیک<span>‌لند</span>
+</div>
+</header>
+
+
+<main class="container">
+
+
+<article class="music-box">
+
+
+<div class="cover">
+
+<img src="funk-cover.jpg">
+
+</div>
+
+
+<div class="content">
+
+
+<h1>
+دانلود آهنگ MONTAGEM UNKNOWN
+</h1>
+
+
+<p class="artist">
+فانک ادیت MONTAGEM UNKNOWN
+</p>
+
 
 <audio controls>
 
-<source
-src="MONTAGEM UNKNOWN.mp3"
-type="audio/mpeg"
->
+<source src="MONTAGEM UNKNOWN.mp3" type="audio/mpeg">
 
 </audio>
 
-</div>
+
+<a class="download-btn" href="MONTAGEM UNKNOWN.mp3" download>
+⬇ دانلود آهنگ MONTAGEM UNKNOWN
+</a>
+
 
 </div>
 
-</body>
 
-</html>
+</article>
