@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +12,7 @@
 <meta name="keywords" content="موزیک لند, موزیک‌لند, Music Land, دانلود آهنگ, آهنگ شاد, آهنگ فانک, ریمیکس">
 
 <style>
+
 :root {
     --bg: #0b1020;
     --card: #151d35;
@@ -73,34 +75,23 @@ header {
 
 .search-box input {
     width: 100%;
-    padding: 13px 18px;
+    padding: 12px 18px;
     border-radius: 30px;
     border: 1px solid rgba(255,255,255,0.1);
-    outline: none;
-    background: rgba(255,255,255,0.07);
+    background: rgba(255,255,255,0.06);
     color: white;
-    font-size: 15px;
-}
-
-.search-box input::placeholder {
-    color: #8f98b0;
+    outline: none;
 }
 
 .hero {
     max-width: 1200px;
-    height: 300px;
-    margin: 25px auto;
-    padding: 30px;
-    border-radius: 24px;
-    display: flex;
-    align-items: center;
+    margin: 30px auto;
+    padding: 70px 30px;
+    border-radius: 25px;
+    text-align: center;
     background:
-        linear-gradient(90deg, rgba(11,16,32,0.95), rgba(11,16,32,0.25)),
+        linear-gradient(rgba(11,16,32,0.65), rgba(11,16,32,0.85)),
         url("music-background.jpg") center/cover;
-}
-
-.hero-content {
-    max-width: 550px;
 }
 
 .hero h1 {
@@ -110,45 +101,41 @@ header {
 
 .hero p {
     color: var(--muted);
+    font-size: 17px;
     line-height: 2;
 }
 
-.container {
-    max-width: 1200px;
-    margin: auto;
-    padding: 0 20px 130px;
-}
-
 .categories {
+    max-width: 1200px;
+    margin: 25px auto;
+    padding: 0 20px;
     display: flex;
-    flex-wrap: wrap;
     gap: 10px;
-    margin: 25px 0;
+    flex-wrap: wrap;
 }
 
-.category-btn {
-    border: none;
+.category {
+    padding: 10px 20px;
+    border-radius: 30px;
     background: var(--card);
     color: white;
-    padding: 11px 20px;
-    border-radius: 30px;
+    border: 1px solid rgba(255,255,255,0.08);
     cursor: pointer;
-    transition: 0.25s;
-    font-size: 14px;
 }
 
-.category-btn:hover,
-.category-btn.active {
+.category:hover {
     background: linear-gradient(135deg, var(--purple), var(--pink));
 }
 
 .section {
-    margin-top: 35px;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
 }
 
 .section h2 {
-    font-size: 25px;
-    margin-bottom: 18px;
+    margin-bottom: 20px;
+    font-size: 28px;
 }
 
 .songs-grid {
@@ -197,17 +184,16 @@ header {
 }
 
 .song-info h3 {
-    font-size: 18px;
+    font-size: 19px;
     margin-bottom: 8px;
 }
 
 .song-info p {
     color: var(--muted);
-    font-size: 14px;
-    margin-bottom: 16px;
+    margin-bottom: 15px;
 }
 
-.song-actions {
+.buttons {
     display: flex;
     gap: 10px;
 }
@@ -218,26 +204,19 @@ header {
     padding: 11px;
     border-radius: 10px;
     border: none;
-    cursor: pointer;
-    text-align: center;
     text-decoration: none;
-    font-size: 14px;
-    transition: 0.2s;
+    text-align: center;
+    cursor: pointer;
+    color: white;
+    font-family: inherit;
 }
 
 .play-btn {
-    background: linear-gradient(135deg, var(--purple), var(--pink));
-    color: white;
+    background: linear-gradient(135deg, var(--purple), #6d28d9);
 }
 
 .download-btn {
-    background: rgba(255,255,255,0.08);
-    color: white;
-}
-
-.play-btn:hover,
-.download-btn:hover {
-    transform: scale(1.03);
+    background: linear-gradient(135deg, var(--pink), #be185d);
 }
 
 .audio-player {
@@ -253,89 +232,56 @@ header {
 }
 
 .player-inner {
-    max-width: 1200px;
+    max-width: 900px;
     margin: auto;
-    display: flex;
-    align-items: center;
-    gap: 20px;
 }
 
-.now-playing {
-    min-width: 220px;
-}
-
-.now-playing strong {
-    display: block;
-    margin-bottom: 5px;
-}
-
-.now-playing span {
-    color: var(--muted);
-    font-size: 13px;
-}
-
-audio {
-    flex: 1;
+.player-inner audio {
     width: 100%;
 }
 
-.hidden {
-    display: none !important;
-}
-
 @media (max-width: 900px) {
+
     .songs-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    .hero h1 {
-        font-size: 34px;
-    }
 }
 
 @media (max-width: 600px) {
+
     .header-inner {
+        padding: 14px;
         flex-direction: column;
     }
 
     .search-box {
-        max-width: none;
+        max-width: 100%;
         width: 100%;
     }
 
     .hero {
-        height: 250px;
-        margin: 15px;
+        margin: 20px 15px;
+        padding: 50px 20px;
     }
 
     .hero h1 {
-        font-size: 28px;
-    }
-
-    .container {
-        padding: 0 15px 140px;
+        font-size: 30px;
     }
 
     .songs-grid {
         grid-template-columns: 1fr;
     }
 
-    .player-inner {
-        flex-direction: column;
-        gap: 8px;
-    }
-
-    .now-playing {
-        min-width: 0;
-        width: 100%;
-    }
 }
+
 </style>
 </head>
 
 <body>
 
 <header>
+
     <div class="header-inner">
 
         <div class="logo">
@@ -351,294 +297,279 @@ audio {
         </div>
 
     </div>
+
 </header>
 
-<div class="hero">
 
-    <div class="hero-content">
+<section class="hero">
 
-        <h1>موزیک لند 🎵</h1>
+    <h1>موزیک لند 🎵</h1>
 
-        <p>
-            موزیک لند؛ بهترین آهنگ‌ها را پیدا کن، آنلاین گوش بده
-            و با یک کلیک دانلود کن.
-        </p>
+    <p>
+        موزیک لند؛ بهترین آهنگ‌ها را پیدا کن، آنلاین گوش بده
+        و با یک کلیک دانلود کن.
+    </p>
 
-    </div>
+</section>
+
+
+<div class="categories">
+
+    <button class="category" onclick="filterSongs('all')">
+        همه
+    </button>
+
+    <button class="category" onclick="filterSongs('happy')">
+        شاد
+    </button>
+
+    <button class="category" onclick="filterSongs('funk')">
+        فانک
+    </button>
+
+    <button class="category" onclick="filterSongs('sad')">
+        غمگین
+    </button>
+
+    <button class="category" onclick="filterSongs('remix')">
+        ریمیکس
+    </button>
 
 </div>
 
-<main class="container">
 
-    <div class="categories">
+<section class="section">
 
-        <button class="category-btn active" data-filter="all">
-            همه
-        </button>
+    <h2>🎉 آهنگ‌های شاد</h2>
 
-        <button class="category-btn" data-filter="happy">
-            شاد
-        </button>
+    <div class="songs-grid">
 
-        <button class="category-btn" data-filter="funk">
-            فانک
-        </button>
 
-        <button class="category-btn" data-filter="sad">
-            غمگین
-        </button>
+        <!-- عاشقم کرده -->
 
-        <button class="category-btn" data-filter="remix">
-            ریمیکس
-        </button>
+        <div class="song-card" data-category="happy">
 
-    </div>
-
-    <!-- ================= شاد ================= -->
-
-    <section class="section" data-section="happy">
-
-        <h2>🎉 آهنگ‌های شاد</h2>
-
-        <div class="songs-grid">
-
-            <article
-                class="song-card"
-                data-category="happy"
-                data-title="عاشقم کرده"
-                data-artist="بهنام بانی"
+            <a
+                href="ashegham-karde.html"
+                style="text-decoration:none;color:inherit;display:block;"
             >
 
                 <div class="cover">
                     🎵
-                </div>
-
-                <div class="song-info">
-
-                    <h3>عاشقم کرده</h3>
-
-                    <p>بهنام بانی</p>
-
-                    <div class="song-actions">
-
-                        <button
-                            class="play-btn"
-                            data-title="عاشقم کرده"
-                            data-artist="بهنام بانی"
-                            data-audio="ashegham-karde.mp3"
-                        >
-                            ▶ پخش
-                        </button>
-
-                        <a
-                            class="download-btn"
-                            href="ashegham-karde.mp3"
-                            download
-                        >
-                            دانلود
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-            <article
-                class="song-card"
-                data-category="happy"
-                data-title="همه ی دارو ندار منی"
-                data-artist="Savash - Dar O Nadar"
-            >
-
-                <div class="cover">
-                    🎵
-                </div>
-
-                <div class="song-info">
-
-                    <h3>همه ی دارو ندار منی</h3>
-
-                    <p>Savash - Dar O Nadar</p>
-
-                    <div class="song-actions">
-
-                        <button
-                            class="play-btn"
-                            data-title="همه ی دارو ندار منی"
-                            data-artist="Savash - Dar O Nadar"
-                            data-audio="siavash.mp3"
-                        >
-                            ▶ پخش
-                        </button>
-
-                        <a
-                            class="download-btn"
-                            href="siavash.mp3"
-                            download
-                        >
-                            دانلود
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-        </div>
-
-    </section>
-
-    <!-- ================= فانک ================= -->
-
-    <section class="section" data-section="funk">
-
-        <h2>🔥 آهنگ‌های فانک</h2>
-
-        <div class="songs-grid">
-
-            <article
-                class="song-card"
-                data-category="funk"
-                data-title="MONTAGEM UNKNOWN"
-                data-artist="فانک ادیت MONTAGEM UNKNOWN"
-            >
-
-                <div class="cover">
-
-                    <img
-                        src="funk-cover.jpg"
-                        alt="MONTAGEM UNKNOWN"
-                    >
-
-                </div>
-
-                <div class="song-info">
-
-                    <h3>MONTAGEM UNKNOWN</h3>
-
-                    <p>فانک ادیت MONTAGEM UNKNOWN</p>
-
-                    <div class="song-actions">
-
-                        <button
-                            class="play-btn"
-                            data-title="MONTAGEM UNKNOWN"
-                            data-artist="فانک ادیت MONTAGEM UNKNOWN"
-                            data-audio="MONTAGEM UNKNOWN.mp3"
-                        >
-                            ▶ پخش
-                        </button>
-
-                        <a
-                            class="download-btn"
-                            href="MONTAGEM UNKNOWN.mp3"
-                            download
-                        >
-                            دانلود
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-            <article
-                class="song-card"
-                data-category="funk"
-                data-title="DJ VGK1 x Hwungii x rezcaze - funk na mira"
-                data-artist="DJ VGK1 x Hwungii x rezcaze"
-            >
-
-                <div class="cover">
-
-                    <img
-                        src="na mira.jpg"
-                        alt="funk na mira"
-                    >
-
                 </div>
 
                 <div class="song-info">
 
                     <h3>
-                        DJ VGK1 x Hwungii x rezcaze - funk na mira
+                        عاشقم کرده
                     </h3>
 
                     <p>
-                        DJ VGK1 x Hwungii x rezcaze
+                        بهنام بانی
                     </p>
-
-                    <div class="song-actions">
-
-                        <button
-                            class="play-btn"
-                            data-title="DJ VGK1 x Hwungii x rezcaze - funk na mira"
-                            data-artist="DJ VGK1 x Hwungii x rezcaze"
-                            data-audio="DJ VGK1 x Hwungii x rezcaze - funk na mira.mp3"
-                        >
-                            ▶ پخش
-                        </button>
-
-                        <a
-                            class="download-btn"
-                            href="DJ VGK1 x Hwungii x rezcaze - funk na mira.mp3"
-                            download
-                        >
-                            دانلود
-                        </a>
-
-                    </div>
 
                 </div>
 
-            </article>
+            </a>
+
+            <div class="song-info" style="padding-top:0;">
+
+                <div class="buttons">
+
+                    <a
+                        class="play-btn"
+                        href="ashegham-karde.html"
+                    >
+                        ▶ ورود به آهنگ
+                    </a>
+
+                    <a
+                        class="download-btn"
+                        href="ashegham-karde.mp3"
+                        download
+                    >
+                        ⬇ دانلود
+                    </a>
+
+                </div>
+
+            </div>
 
         </div>
 
-    </section>
 
-    <!-- ================= غمگین ================= -->
+        <!-- همه ی دارو ندار منی -->
 
-    <section class="section" data-section="sad">
+        <div class="song-card" data-category="happy">
 
-        <h2>😢 آهنگ‌های غمگین</h2>
+            <div class="cover">
+                🎵
+            </div>
 
-        <div class="songs-grid"></div>
+            <div class="song-info">
 
-    </section>
+                <h3>
+                    همه ی دارو ندار منی
+                </h3>
 
-    <!-- ================= ریمیکس ================= -->
+                <p>
+                    Savash - Dar O Nadar
+                </p>
 
-    <section class="section" data-section="remix">
+                <div class="buttons">
 
-        <h2>🎧 ریمیکس‌ها</h2>
+                    <button
+                        class="play-btn"
+                        onclick="playSong('siavash.mp3')"
+                    >
+                        ▶ پخش
+                    </button>
 
-        <div class="songs-grid"></div>
+                    <a
+                        class="download-btn"
+                        href="siavash.mp3"
+                        download
+                    >
+                        ⬇ دانلود
+                    </a>
 
-    </section>
+                </div>
 
-</main>
+            </div>
 
-<!-- ================= پلیر ================= -->
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="section">
+
+    <h2>🔥 آهنگ‌های فانک</h2>
+
+    <div class="songs-grid">
+
+
+        <!-- MONTAGEM UNKNOWN -->
+
+        <div class="song-card" data-category="funk">
+
+            <div class="cover">
+
+                <img
+                    src="funk-cover.jpg"
+                    alt="MONTAGEM UNKNOWN"
+                >
+
+            </div>
+
+            <div class="song-info">
+
+                <h3>
+                    MONTAGEM UNKNOWN
+                </h3>
+
+                <p>
+                    فانک ادیت MONTAGEM UNKNOWN
+                </p>
+
+                <div class="buttons">
+
+                    <button
+                        class="play-btn"
+                        onclick="playSong('MONTAGEM UNKNOWN.mp3')"
+                    >
+                        ▶ پخش
+                    </button>
+
+                    <a
+                        class="download-btn"
+                        href="MONTAGEM UNKNOWN.mp3"
+                        download
+                    >
+                        ⬇ دانلود
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- FUNK NA MIRA -->
+
+        <div class="song-card" data-category="funk">
+
+            <div class="cover">
+
+                <img
+                    src="na mira.jpg"
+                    alt="funk na mira"
+                >
+
+            </div>
+
+            <div class="song-info">
+
+                <h3>
+                    DJ VGK1 x Hwungii x rezcaze - funk na mira
+                </h3>
+
+                <p>
+                    DJ VGK1 x Hwungii x rezcaze
+                </p>
+
+                <div class="buttons">
+
+                    <button
+                        class="play-btn"
+                        onclick="playSong('DJ VGK1 x Hwungii x rezcaze - funk na mira.mp3')"
+                    >
+                        ▶ پخش
+                    </button>
+
+                    <a
+                        class="download-btn"
+                        href="DJ VGK1 x Hwungii x rezcaze - funk na mira.mp3"
+                        download
+                    >
+                        ⬇ دانلود
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="section">
+
+    <h2>😢 آهنگ‌های غمگین</h2>
+
+    <div class="songs-grid"></div>
+
+</section>
+
+
+<section class="section">
+
+    <h2>🎧 ریمیکس</h2>
+
+    <div class="songs-grid"></div>
+
+</section>
+
 
 <div class="audio-player">
 
     <div class="player-inner">
-
-        <div class="now-playing">
-
-            <strong id="nowTitle">
-                هنوز آهنگی پخش نشده
-            </strong>
-
-            <span id="nowArtist">
-                موزیک‌لند
-            </span>
-
-        </div>
 
         <audio
             id="audioPlayer"
@@ -649,95 +580,62 @@ audio {
 
 </div>
 
+
 <script>
 
 const audioPlayer = document.getElementById("audioPlayer");
-const nowTitle = document.getElementById("nowTitle");
-const nowArtist = document.getElementById("nowArtist");
-const searchInput = document.getElementById("searchInput");
 
-// ================= پخش آهنگ =================
+function playSong(file) {
 
-document.querySelectorAll(".play-btn").forEach(button => {
+    audioPlayer.src = file;
 
-    button.addEventListener("click", () => {
+    audioPlayer.play();
 
-        const title = button.dataset.title;
-        const artist = button.dataset.artist;
-        const audio = button.dataset.audio;
+}
 
-        audioPlayer.src = audio;
+function filterSongs(category) {
 
-        nowTitle.textContent = title;
-        nowArtist.textContent = artist;
+    const cards = document.querySelectorAll(".song-card");
 
-        audioPlayer.play();
-
-    });
-
-});
-
-// ================= جستجو =================
-
-searchInput.addEventListener("input", () => {
-
-    const search = searchInput.value.trim().toLowerCase();
-
-    document.querySelectorAll(".song-card").forEach(card => {
-
-        const title = card.dataset.title.toLowerCase();
-        const artist = card.dataset.artist.toLowerCase();
+    cards.forEach(card => {
 
         if (
-            title.includes(search) ||
-            artist.includes(search)
+            category === "all" ||
+            card.dataset.category === category
         ) {
 
-            card.classList.remove("hidden");
+            card.style.display = "";
 
         } else {
 
-            card.classList.add("hidden");
+            card.style.display = "none";
 
         }
 
     });
 
-});
+}
 
-// ================= دسته‌بندی =================
 
-const categoryButtons =
-    document.querySelectorAll(".category-btn");
+document.getElementById("searchInput").addEventListener("input", function() {
 
-categoryButtons.forEach(button => {
+    const search = this.value.toLowerCase();
 
-    button.addEventListener("click", () => {
+    const cards = document.querySelectorAll(".song-card");
 
-        categoryButtons.forEach(btn => {
-            btn.classList.remove("active");
-        });
+    cards.forEach(card => {
 
-        button.classList.add("active");
+        const text = card.innerText.toLowerCase();
 
-        const filter = button.dataset.filter;
+        if (text.includes(search)) {
 
-        document.querySelectorAll(".song-card").forEach(card => {
+            card.style.display = "";
 
-            if (
-                filter === "all" ||
-                card.dataset.category === filter
-            ) {
+        } else {
 
-                card.classList.remove("hidden");
+            card.style.display = "none";
 
-            } else {
-
-                card.classList.add("hidden");
-
-            }
-
-        });
+        }
 
     });
 
