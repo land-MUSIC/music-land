@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
@@ -94,6 +95,11 @@
       padding: 15px 18px;
       outline: none;
       font-size: 15px;
+      font-family: inherit;
+    }
+
+    .search-box input::placeholder {
+      color: var(--muted);
     }
 
     .search-box input:focus {
@@ -168,6 +174,7 @@
       align-items: center;
       justify-content: space-between;
       margin-bottom: 18px;
+      gap: 15px;
     }
 
     .section-title h2 {
@@ -315,10 +322,16 @@
 
       nav {
         justify-content: center;
+        flex-wrap: wrap;
       }
 
       .hero-box {
         padding: 35px 22px;
+      }
+
+      .section-title {
+        flex-direction: column;
+        align-items: flex-start;
       }
 
       .player-content {
@@ -336,19 +349,26 @@
 
 <body>
 
+  <!-- هدر -->
   <header>
     <div class="header-content">
-      <div class="logo">موزیک<span>‌لند</span></div>
+
+      <div class="logo">
+        موزیک<span>‌لند</span>
+      </div>
 
       <nav>
-        <a href="#funk">شاد</a>
-        <a href="#happy">فانک</a>
+        <a href="#funk">فانک</a>
+        <a href="#happy">شاد</a>
         <a href="#sad">غمگین</a>
         <a href="#remix">ریمیکس</a>
       </nav>
+
     </div>
   </header>
 
+
+  <!-- جستجو -->
   <div class="search-box">
     <input
       type="search"
@@ -357,177 +377,290 @@
     >
   </div>
 
+
+  <!-- هرو -->
   <section class="hero">
     <div class="hero-box">
+
       <h1>آهنگ مورد علاقه‌ات را پیدا کن</h1>
+
       <p>
         مجموعه‌ای از آهنگ‌های فانک، شاد، غمگین و ریمیکس
         با امکان پخش آنلاین و دانلود.
       </p>
+
     </div>
   </section>
 
+
+  <!-- دسته‌بندی -->
   <div class="categories">
-    <button class="category-btn active" data-category="all">همه آهنگ‌ها</button>
-    <button class="category-btn" data-category="funk">شاد</button>
-    <button class="category-btn" data-category="happy">فانک</button>
-    <button class="category-btn" data-category="sad">غمگین</button>
-    <button class="category-btn" data-category="remix">ریمیکس</button>
+
+    <button class="category-btn active" data-category="all">
+      همه آهنگ‌ها
+    </button>
+
+    <button class="category-btn" data-category="funk">
+      فانک
+    </button>
+
+    <button class="category-btn" data-category="happy">
+      شاد
+    </button>
+
+    <button class="category-btn" data-category="sad">
+      غمگین
+    </button>
+
+    <button class="category-btn" data-category="remix">
+      ریمیکس
+    </button>
+
   </div>
+
 
   <main>
 
+    <!-- ========================= -->
     <!-- بخش فانک -->
+    <!-- ========================= -->
+
     <section class="music-section" id="funk" data-section="funk">
+
       <div class="section-title">
-        <h2>🎧 اهنگ های شاد</h2>
-        <span>آهنگ‌های پرانرژی و بیس‌دار</span>
+        <h2>🔥 آهنگ‌های فانک</h2>
+        <span>مناسب ادیت و ویدیو</span>
       </div>
 
       <div class="songs-grid">
-        <article class="song-card" data-category="funk"
-          data-title="اهنگ همه ی دارو ندار منی"
-          data-artist="Savash - Dar O Nadar">
+
+        <!-- آهنگ فانک 1 -->
+        <article
+          class="song-card"
+          data-category="funk"
+          data-title="MONTAGEM UNKNOWN"
+          data-artist="فانک ادیت MONTAGEM UNKNOWN"
+        >
 
           <div class="cover">🔥</div>
 
           <div class="song-info">
-            <h3>همه ی دارو نداره منی</h3>
-            <p>Savash - Dar O Nadar</p>
+
+            <h3>MONTAGEM UNKNOWN</h3>
+
+            <p>فانک ادیت MONTAGEM UNKNOWN</p>
 
             <div class="song-actions">
-              <button class="play-btn"
-                data-title="همه ی دارو ندار منی"
-                data-artist="Savash - Dar O Nadar (320)"
-                data-audio="siavash.mp3">
+
+              <button
+                class="play-btn"
+                data-title="MONTAGEM UNKNOWN"
+                data-artist="فانک ادیت MONTAGEM UNKNOWN"
+                data-audio="MONTAGEM UNKNOWN.mp3"
+              >
                 ▶ پخش
               </button>
 
-              <a class="download-btn"
-                href="siavash.mp3"
-                download>
+              <a
+                class="download-btn"
+                href="MONTAGEM UNKNOWN.mp3"
+                download
+              >
                 دانلود
               </a>
+
             </div>
+
           </div>
+
         </article>
+
+
+        <!--
+          برای اضافه کردن آهنگ فانک جدید،
+          همین article را کپی کن و اطلاعاتش را تغییر بده.
+        -->
+
       </div>
     </section>
 
+
+    <!-- ========================= -->
     <!-- بخش شاد -->
+    <!-- ========================= -->
+
     <section class="music-section" id="happy" data-section="happy">
+
       <div class="section-title">
-        <h2>اهنگ فانک </h2>
-        <span>مناسب ادیت</span>
+        <h2>🎉 آهنگ‌های شاد</h2>
+        <span>آهنگ‌های پرانرژی و بیس‌دار</span>
       </div>
 
       <div class="songs-grid">
-        <article class="song-card" data-category="happy"
-          data-title="MONTAGEM UNKNOWN"
-          data-artist="فانک ادیت MONTAGEM UNKNOWN">
+
+        <article
+          class="song-card"
+          data-category="happy"
+          data-title="همه ی دارو ندار منی"
+          data-artist="Savash - Dar O Nadar"
+        >
 
           <div class="cover">🎉</div>
 
           <div class="song-info">
-            <h3>MONTAGEM UNKNOWN</h3>
-            <p>فانک ادیت MONTAGEM UNKNOWN</p>
+
+            <h3>همه ی دارو ندار منی</h3>
+
+            <p>Savash - Dar O Nadar</p>
 
             <div class="song-actions">
-              <button class="play-btn"
-                data-title="MONTAGEM UNKNOWN"
-                data-artist="فانک ادیت MONTAGEM UNKNOWN"
-                data-audio="MONTAGEM UNKNOWN.mp3">
+
+              <button
+                class="play-btn"
+                data-title="همه ی دارو ندار منی"
+                data-artist="Savash - Dar O Nadar (320)"
+                data-audio="siavash.mp3"
+              >
                 ▶ پخش
               </button>
 
-              <a class="download-btn"
-                href="MONTAGEM UNKNOWN.mp3"
-                download>
+              <a
+                class="download-btn"
+                href="siavash.mp3"
+                download
+              >
                 دانلود
               </a>
+
             </div>
+
           </div>
+
         </article>
+
       </div>
     </section>
 
+
+    <!-- ========================= -->
     <!-- بخش غمگین -->
+    <!-- ========================= -->
+
     <section class="music-section" id="sad" data-section="sad">
+
       <div class="section-title">
         <h2>🌧 آهنگ‌های غمگین</h2>
         <span>برای لحظه‌های آرام</span>
       </div>
 
       <div class="songs-grid">
-        <article class="song-card" data-category="sad"
+
+        <article
+          class="song-card"
+          data-category="sad"
           data-title="خاطره"
-          data-artist="نوید">
+          data-artist="نوید"
+        >
 
           <div class="cover">💔</div>
 
           <div class="song-info">
+
             <h3>خاطره</h3>
+
             <p>نوید</p>
 
             <div class="song-actions">
-              <button class="play-btn"
+
+              <button
+                class="play-btn"
                 data-title="خاطره"
                 data-artist="نوید"
-                data-audio="music/sad-1.mp3">
+                data-audio="music/sad-1.mp3"
+              >
                 ▶ پخش
               </button>
 
-              <a class="download-btn"
+              <a
+                class="download-btn"
                 href="music/sad-1.mp3"
-                download>
+                download
+              >
                 دانلود
               </a>
+
             </div>
+
           </div>
+
         </article>
+
       </div>
     </section>
 
+
+    <!-- ========================= -->
     <!-- بخش ریمیکس -->
+    <!-- ========================= -->
+
     <section class="music-section" id="remix" data-section="remix">
+
       <div class="section-title">
         <h2>🎶 ریمیکس‌ها</h2>
         <span>ریمیکس‌های جدید و پرطرفدار</span>
       </div>
 
       <div class="songs-grid">
-        <article class="song-card" data-category="remix"
+
+        <article
+          class="song-card"
+          data-category="remix"
           data-title="ریمیکس پارتی"
-          data-artist="DJ Max">
+          data-artist="DJ Max"
+        >
 
           <div class="cover">🎵</div>
 
           <div class="song-info">
+
             <h3>ریمیکس پارتی</h3>
+
             <p>DJ Max</p>
 
             <div class="song-actions">
-              <button class="play-btn"
+
+              <button
+                class="play-btn"
                 data-title="ریمیکس پارتی"
                 data-artist="DJ Max"
-                data-audio="music/remix-1.mp3">
+                data-audio="music/remix-1.mp3"
+              >
                 ▶ پخش
               </button>
 
-              <a class="download-btn"
+              <a
+                class="download-btn"
                 href="music/remix-1.mp3"
-                download>
+                download
+              >
                 دانلود
               </a>
+
             </div>
+
           </div>
+
         </article>
+
       </div>
     </section>
 
+
+    <!-- پیام بدون نتیجه -->
     <div class="empty-message" id="emptyMessage">
       آهنگی با این مشخصات پیدا نشد.
     </div>
+
 
     <footer>
       © ۱۴۰۵ - تمامی حقوق برای موزیک‌لند محفوظ است.
@@ -535,108 +668,217 @@
 
   </main>
 
+
+  <!-- ========================= -->
   <!-- پخش‌کننده ثابت -->
+  <!-- ========================= -->
+
   <div class="player">
+
     <div class="player-content">
+
       <div class="now-playing">
-        <strong id="nowTitle">هنوز آهنگی انتخاب نشده</strong>
-        <small id="nowArtist">یک آهنگ را برای پخش انتخاب کنید</small>
+
+        <strong id="nowTitle">
+          هنوز آهنگی انتخاب نشده
+        </strong>
+
+        <small id="nowArtist">
+          یک آهنگ را برای پخش انتخاب کنید
+        </small>
+
       </div>
 
       <audio id="audioPlayer" controls>
         مرورگر شما از پخش‌کننده صوتی پشتیبانی نمی‌کند.
       </audio>
+
     </div>
+
   </div>
 
+
   <script>
+
     const audioPlayer = document.getElementById("audioPlayer");
     const nowTitle = document.getElementById("nowTitle");
     const nowArtist = document.getElementById("nowArtist");
     const searchInput = document.getElementById("searchInput");
     const emptyMessage = document.getElementById("emptyMessage");
-    const categoryButtons = document.querySelectorAll(".category-btn");
-    const songCards = document.querySelectorAll(".song-card");
-    const sections = document.querySelectorAll(".music-section");
+
+    const categoryButtons =
+      document.querySelectorAll(".category-btn");
+
+    const songCards =
+      document.querySelectorAll(".song-card");
+
+    const sections =
+      document.querySelectorAll(".music-section");
+
 
     let selectedCategory = "all";
 
+
+    // =========================
     // پخش آهنگ
+    // =========================
+
     document.querySelectorAll(".play-btn").forEach(button => {
+
       button.addEventListener("click", () => {
+
         const title = button.dataset.title;
         const artist = button.dataset.artist;
         const audioFile = button.dataset.audio;
 
         audioPlayer.src = audioFile;
+
         nowTitle.textContent = title;
         nowArtist.textContent = artist;
 
         audioPlayer.play().catch(() => {
-          alert("فایل صوتی پیدا نشد یا مرورگر اجازه پخش خودکار نداد.");
+
+          alert(
+            "فایل صوتی پیدا نشد یا مرورگر اجازه پخش خودکار نداد."
+          );
+
         });
+
       });
+
     });
 
+
+    // =========================
     // انتخاب دسته‌بندی
+    // =========================
+
     categoryButtons.forEach(button => {
+
       button.addEventListener("click", () => {
-        categoryButtons.forEach(btn => btn.classList.remove("active"));
+
+        categoryButtons.forEach(btn => {
+          btn.classList.remove("active");
+        });
+
         button.classList.add("active");
 
-        selectedCategory = button.dataset.category;
+        selectedCategory =
+          button.dataset.category;
+
         filterSongs();
+
       });
+
     });
 
-    // جست‌وجوی آهنگ
-    searchInput.addEventListener("input", filterSongs);
+
+    // =========================
+    // جستجو
+    // =========================
+
+    searchInput.addEventListener(
+      "input",
+      filterSongs
+    );
+
+
+    // =========================
+    // فیلتر آهنگ‌ها
+    // =========================
 
     function filterSongs() {
-      const searchText = searchInput.value.trim().toLowerCase();
+
+      const searchText =
+        searchInput.value
+          .trim()
+          .toLowerCase();
+
       let visibleSongs = 0;
 
+
       songCards.forEach(card => {
-        const category = card.dataset.category;
-        const title = card.dataset.title.toLowerCase();
-        const artist = card.dataset.artist.toLowerCase();
+
+        const category =
+          card.dataset.category;
+
+        const title =
+          (card.dataset.title || "").toLowerCase();
+
+        const artist =
+          (card.dataset.artist || "").toLowerCase();
+
 
         const matchesCategory =
-          selectedCategory === "all" || category === selectedCategory;
+          selectedCategory === "all" ||
+          category === selectedCategory;
+
 
         const matchesSearch =
-          title.includes(searchText) || artist.includes(searchText);
+          title.includes(searchText) ||
+          artist.includes(searchText);
 
-        if (matchesCategory && matchesSearch) {
-          card.style.display = "block";
+
+        if (
+          matchesCategory &&
+          matchesSearch
+        ) {
+
+          card.style.display = "";
+
           visibleSongs++;
+
         } else {
+
           card.style.display = "none";
+
         }
+
       });
 
-      // مخفی‌کردن بخش‌هایی که آهنگ قابل‌نمایش ندارند
-      sections.forEach(section => {
-        const visibleCards = section.querySelectorAll(
-          '.song-card[style="display: block;"]'
-        );
 
-        const allCards = section.querySelectorAll(".song-card");
+      // نمایش یا مخفی کردن بخش‌ها
+
+      sections.forEach(section => {
+
+        const cards =
+          section.querySelectorAll(".song-card");
 
         let hasVisibleCard = false;
 
-        allCards.forEach(card => {
-          if (card.style.display !== "none") {
+
+        cards.forEach(card => {
+
+          if (
+            card.style.display !== "none"
+          ) {
+
             hasVisibleCard = true;
+
           }
+
         });
 
-        section.style.display = hasVisibleCard ? "block" : "none";
+
+        section.style.display =
+          hasVisibleCard
+            ? ""
+            : "none";
+
       });
 
-      emptyMessage.style.display = visibleSongs === 0 ? "block" : "none";
+
+      // پیام پیدا نشدن آهنگ
+
+      emptyMessage.style.display =
+        visibleSongs === 0
+          ? "block"
+          : "none";
+
     }
+
   </script>
 
 </body>
 </html>
+```
