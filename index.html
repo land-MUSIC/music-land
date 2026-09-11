@@ -11,6 +11,10 @@
 
 <meta name="keywords" content="موزیک لند, موزیک‌لند, Music Land, دانلود آهنگ, آهنگ شاد, آهنگ فانک, ریمیکس">
 
+<meta name="robots" content="index, follow">
+
+<link rel="canonical" href="https://land-music.github.io/music-land/">
+
 <style>
 
 :root {
@@ -70,7 +74,7 @@ header {
 
 .search-box {
     flex: 1;
-    max-width: 450px;
+    max-width: 500px;
 }
 
 .search-box input {
@@ -81,16 +85,21 @@ header {
     background: rgba(255,255,255,0.06);
     color: white;
     outline: none;
+    font-size: 15px;
+}
+
+.search-box input::placeholder {
+    color: #9ca3b5;
 }
 
 .hero {
     max-width: 1200px;
     margin: 30px auto;
-    padding: 70px 30px;
+    padding: 70px 25px;
     border-radius: 25px;
     text-align: center;
     background:
-        linear-gradient(rgba(11,16,32,0.65), rgba(11,16,32,0.85)),
+        linear-gradient(rgba(10,15,30,0.55), rgba(10,15,30,0.75)),
         url("music-background.jpg") center/cover;
 }
 
@@ -114,17 +123,17 @@ header {
     flex-wrap: wrap;
 }
 
-.category {
-    padding: 10px 20px;
+.category-btn {
+    border: none;
+    padding: 10px 18px;
     border-radius: 30px;
     background: var(--card);
     color: white;
-    border: 1px solid rgba(255,255,255,0.08);
     cursor: pointer;
 }
 
-.category:hover {
-    background: linear-gradient(135deg, var(--purple), var(--pink));
+.category-btn:hover {
+    background: var(--purple);
 }
 
 .section {
@@ -135,7 +144,7 @@ header {
 
 .section h2 {
     margin-bottom: 20px;
-    font-size: 28px;
+    font-size: 26px;
 }
 
 .songs-grid {
@@ -185,17 +194,17 @@ header {
 
 .song-info h3 {
     font-size: 19px;
-    margin-bottom: 8px;
+    margin-bottom: 7px;
 }
 
 .song-info p {
     color: var(--muted);
-    margin-bottom: 15px;
 }
 
 .buttons {
     display: flex;
     gap: 10px;
+    margin-top: 15px;
 }
 
 .play-btn,
@@ -203,20 +212,23 @@ header {
     flex: 1;
     padding: 11px;
     border-radius: 10px;
-    border: none;
-    text-decoration: none;
     text-align: center;
-    cursor: pointer;
+    text-decoration: none;
     color: white;
-    font-family: inherit;
+    font-size: 14px;
 }
 
 .play-btn {
-    background: linear-gradient(135deg, var(--purple), #6d28d9);
+    background: var(--purple);
 }
 
 .download-btn {
-    background: linear-gradient(135deg, var(--pink), #be185d);
+    background: var(--pink);
+}
+
+.empty {
+    color: var(--muted);
+    padding: 20px 0;
 }
 
 .audio-player {
@@ -226,9 +238,8 @@ header {
     right: 0;
     z-index: 200;
     background: rgba(10,15,30,0.95);
-    backdrop-filter: blur(15px);
-    border-top: 1px solid rgba(255,255,255,0.1);
     padding: 12px 20px;
+    border-top: 1px solid rgba(255,255,255,0.08);
 }
 
 .player-inner {
@@ -251,12 +262,10 @@ header {
 @media (max-width: 600px) {
 
     .header-inner {
-        padding: 14px;
         flex-direction: column;
     }
 
     .search-box {
-        max-width: 100%;
         width: 100%;
     }
 
@@ -266,11 +275,15 @@ header {
     }
 
     .hero h1 {
-        font-size: 30px;
+        font-size: 32px;
     }
 
     .songs-grid {
         grid-template-columns: 1fr;
+    }
+
+    .cover {
+        height: 230px;
     }
 
 }
@@ -282,301 +295,341 @@ header {
 
 <header>
 
-    <div class="header-inner">
+<div class="header-inner">
 
-        <div class="logo">
-            🎵 موزیک<span>‌لند</span>
-        </div>
+<div class="logo">
+🎵 موزیک<span>‌لند</span>
+</div>
 
-        <div class="search-box">
-            <input
-                type="text"
-                id="searchInput"
-                placeholder="جستجوی آهنگ یا خواننده..."
-            >
-        </div>
+<div class="search-box">
+<input
+type="text"
+id="searchInput"
+placeholder="جستجوی آهنگ یا خواننده..."
+>
+</div>
 
-    </div>
+</div>
 
 </header>
 
 
 <section class="hero">
 
-    <h1>موزیک لند 🎵</h1>
+<h1>موزیک لند 🎵</h1>
 
-    <p>
-        موزیک لند؛ بهترین آهنگ‌ها را پیدا کن، آنلاین گوش بده
-        و با یک کلیک دانلود کن.
-    </p>
+<p>
+موزیک لند؛ بهترین آهنگ‌ها را پیدا کن، آنلاین گوش بده
+و با یک کلیک دانلود کن.
+</p>
 
 </section>
 
 
 <div class="categories">
 
-    <button class="category" onclick="filterSongs('all')">
-        همه
-    </button>
+<button class="category-btn" onclick="filterSongs('all')">
+همه
+</button>
 
-    <button class="category" onclick="filterSongs('happy')">
-        شاد
-    </button>
+<button class="category-btn" onclick="filterSongs('happy')">
+شاد
+</button>
 
-    <button class="category" onclick="filterSongs('funk')">
-        فانک
-    </button>
+<button class="category-btn" onclick="filterSongs('funk')">
+فانک
+</button>
 
-    <button class="category" onclick="filterSongs('sad')">
-        غمگین
-    </button>
+<button class="category-btn" onclick="filterSongs('sad')">
+غمگین
+</button>
 
-    <button class="category" onclick="filterSongs('remix')">
-        ریمیکس
-    </button>
+<button class="category-btn" onclick="filterSongs('remix')">
+ریمیکس
+</button>
 
 </div>
 
 
 <section class="section">
 
-    <h2>🎉 آهنگ‌های شاد</h2>
+<h2>🎉 آهنگ‌های شاد</h2>
 
-    <div class="songs-grid">
-
-
-        <!-- عاشقم کرده -->
-
-        <div class="song-card" data-category="happy">
-
-            <a
-                href="ashegham-karde.html"
-                style="text-decoration:none;color:inherit;display:block;"
-            >
-
-                <div class="cover">
-                    🎵
-                </div>
-
-                <div class="song-info">
-
-                    <h3>
-                        عاشقم کرده
-                    </h3>
-
-                    <p>
-                        بهنام بانی
-                    </p>
-
-                </div>
-
-            </a>
-
-            <div class="song-info" style="padding-top:0;">
-
-                <div class="buttons">
-
-                    <a
-                        class="play-btn"
-                        href="ashegham-karde.html"
-                    >
-                        ▶ ورود به آهنگ
-                    </a>
-
-                    <a
-                        class="download-btn"
-                        href="ashegham-karde.mp3"
-                        download
-                    >
-                        ⬇ دانلود
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
+<div class="songs-grid">
 
 
-        <!-- همه ی دارو ندار منی -->
+<!-- عاشقم کرده -->
 
-        <div class="song-card" data-category="happy">
+<div class="song-card" data-category="happy">
 
-            <div class="cover">
-                🎵
-            </div>
+<a
+href="ashegham-karde.html"
+style="text-decoration:none;color:inherit;display:block;"
+>
 
-            <div class="song-info">
+<div class="cover">
+🎵
+</div>
 
-                <h3>
-                    همه ی دارو ندار منی
-                </h3>
+<div class="song-info">
 
-                <p>
-                    Savash - Dar O Nadar
-                </p>
+<h3>
+عاشقم کرده
+</h3>
 
-                <div class="buttons">
+<p>
+بهنام بانی
+</p>
 
-                    <button
-                        class="play-btn"
-                        onclick="playSong('siavash.mp3')"
-                    >
-                        ▶ پخش
-                    </button>
+</div>
 
-                    <a
-                        class="download-btn"
-                        href="siavash.mp3"
-                        download
-                    >
-                        ⬇ دانلود
-                    </a>
+</a>
 
-                </div>
+<div class="song-info" style="padding-top:0;">
 
-            </div>
+<div class="buttons">
 
-        </div>
+<a
+class="play-btn"
+href="ashegham-karde.html"
+>
+▶ ورود به آهنگ
+</a>
 
-    </div>
+<a
+class="download-btn"
+href="ashegham-karde.mp3"
+download
+>
+⬇ دانلود
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- همه ی دارو ندار منی -->
+
+<div class="song-card" data-category="happy">
+
+<a
+href="siavash.html"
+style="text-decoration:none;color:inherit;display:block;"
+>
+
+<div class="cover">
+🎵
+</div>
+
+<div class="song-info">
+
+<h3>
+همه ی دارو ندار منی
+</h3>
+
+<p>
+Savash - Dar O Nadar
+</p>
+
+</div>
+
+</a>
+
+<div class="song-info" style="padding-top:0;">
+
+<div class="buttons">
+
+<a
+class="play-btn"
+href="siavash.html"
+>
+▶ ورود به آهنگ
+</a>
+
+<a
+class="download-btn"
+href="siavash.mp3"
+download
+>
+⬇ دانلود
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+</div>
 
 </section>
 
 
 <section class="section">
 
-    <h2>🔥 آهنگ‌های فانک</h2>
+<h2>🔥 آهنگ‌های فانک</h2>
 
-    <div class="songs-grid">
-
-
-        <!-- MONTAGEM UNKNOWN -->
-
-        <div class="song-card" data-category="funk">
-
-            <div class="cover">
-
-                <img
-                    src="funk-cover.jpg"
-                    alt="MONTAGEM UNKNOWN"
-                >
-
-            </div>
-
-            <div class="song-info">
-
-                <h3>
-                    MONTAGEM UNKNOWN
-                </h3>
-
-                <p>
-                    فانک ادیت MONTAGEM UNKNOWN
-                </p>
-
-                <div class="buttons">
-
-                    <button
-                        class="play-btn"
-                        onclick="playSong('MONTAGEM UNKNOWN.mp3')"
-                    >
-                        ▶ پخش
-                    </button>
-
-                    <a
-                        class="download-btn"
-                        href="MONTAGEM UNKNOWN.mp3"
-                        download
-                    >
-                        ⬇ دانلود
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
+<div class="songs-grid">
 
 
-        <!-- FUNK NA MIRA -->
+<!-- MONTAGEM UNKNOWN -->
 
-        <div class="song-card" data-category="funk">
+<div class="song-card" data-category="funk">
 
-            <div class="cover">
+<a
+href="montagem-unknown.html"
+style="text-decoration:none;color:inherit;display:block;"
+>
 
-                <img
-                    src="na mira.jpg"
-                    alt="funk na mira"
-                >
+<div class="cover">
 
-            </div>
+<img
+src="funk-cover.jpg"
+alt="MONTAGEM UNKNOWN"
+>
 
-            <div class="song-info">
+</div>
 
-                <h3>
-                    DJ VGK1 x Hwungii x rezcaze - funk na mira
-                </h3>
+<div class="song-info">
 
-                <p>
-                    DJ VGK1 x Hwungii x rezcaze
-                </p>
+<h3>
+MONTAGEM UNKNOWN
+</h3>
 
-                <div class="buttons">
+<p>
+فانک ادیت MONTAGEM UNKNOWN
+</p>
 
-                    <button
-                        class="play-btn"
-                        onclick="playSong('DJ VGK1 x Hwungii x rezcaze - funk na mira.mp3')"
-                    >
-                        ▶ پخش
-                    </button>
+</div>
 
-                    <a
-                        class="download-btn"
-                        href="DJ VGK1 x Hwungii x rezcaze - funk na mira.mp3"
-                        download
-                    >
-                        ⬇ دانلود
-                    </a>
+</a>
 
-                </div>
+<div class="song-info" style="padding-top:0;">
 
-            </div>
+<div class="buttons">
 
-        </div>
+<a
+class="play-btn"
+href="montagem-unknown.html"
+>
+▶ ورود به آهنگ
+</a>
 
-    </div>
+<a
+class="download-btn"
+href="MONTAGEM UNKNOWN.mp3"
+download
+>
+⬇ دانلود
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- FUNK NA MIRA -->
+
+<div class="song-card" data-category="funk">
+
+<a
+href="funk-na-mira.html"
+style="text-decoration:none;color:inherit;display:block;"
+>
+
+<div class="cover">
+
+<img
+src="na mira.jpg"
+alt="DJ VGK1 x Hwungii x rezcaze - funk na mira"
+>
+
+</div>
+
+<div class="song-info">
+
+<h3>
+DJ VGK1 x Hwungii x rezcaze - funk na mira
+</h3>
+
+<p>
+DJ VGK1 x Hwungii x rezcaze
+</p>
+
+</div>
+
+</a>
+
+<div class="song-info" style="padding-top:0;">
+
+<div class="buttons">
+
+<a
+class="play-btn"
+href="funk-na-mira.html"
+>
+▶ ورود به آهنگ
+</a>
+
+<a
+class="download-btn"
+href="DJ VGK1 x Hwungii x rezcaze - funk na mira.mp3"
+download
+>
+⬇ دانلود
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+</div>
 
 </section>
 
 
 <section class="section">
 
-    <h2>😢 آهنگ‌های غمگین</h2>
+<h2>😢 آهنگ‌های غمگین</h2>
 
-    <div class="songs-grid"></div>
+<div class="empty">
+فعلاً آهنگی اضافه نشده است.
+</div>
 
 </section>
 
 
 <section class="section">
 
-    <h2>🎧 ریمیکس</h2>
+<h2>🎧 ریمیکس‌ها</h2>
 
-    <div class="songs-grid"></div>
+<div class="empty">
+فعلاً آهنگی اضافه نشده است.
+</div>
 
 </section>
 
 
 <div class="audio-player">
 
-    <div class="player-inner">
+<div class="player-inner">
 
-        <audio
-            id="audioPlayer"
-            controls
-        ></audio>
+<audio
+id="audioPlayer"
+controls
+>
+</audio>
 
-    </div>
+</div>
 
 </div>
 
@@ -584,14 +637,6 @@ header {
 <script>
 
 const audioPlayer = document.getElementById("audioPlayer");
-
-function playSong(file) {
-
-    audioPlayer.src = file;
-
-    audioPlayer.play();
-
-}
 
 function filterSongs(category) {
 
@@ -617,7 +662,9 @@ function filterSongs(category) {
 }
 
 
-document.getElementById("searchInput").addEventListener("input", function() {
+document
+.getElementById("searchInput")
+.addEventListener("input", function() {
 
     const search = this.value.toLowerCase();
 
@@ -625,7 +672,8 @@ document.getElementById("searchInput").addEventListener("input", function() {
 
     cards.forEach(card => {
 
-        const text = card.innerText.toLowerCase();
+        const text =
+            card.innerText.toLowerCase();
 
         if (text.includes(search)) {
 
@@ -644,4 +692,5 @@ document.getElementById("searchInput").addEventListener("input", function() {
 </script>
 
 </body>
+
 </html>
