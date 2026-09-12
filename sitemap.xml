@@ -4,7 +4,6 @@
 
 <url>
 <loc>https://land-music.github.io/music-land/</loc>
-<priority>1.0</priority>
 </url>
 
 <url>
@@ -13,6 +12,18 @@
 
 <url>
 <loc>https://land-music.github.io/music-land/ashegham-karde.html</loc>
+</url>
+
+<url>
+<loc>https://land-music.github.io/music-land/delbaste-namat.html</loc>
+</url>
+
+<url>
+<loc>https://land-music.github.io/music-land/montagem-unknown.html</loc>
+</url>
+
+<url>
+<loc>https://land-music.github.io/music-land/funk-na-mira.html</loc>
 </url>
 
 </urlset>
