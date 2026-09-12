@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>ساخت صفحه آهنگ</title>
+
+<style>
+body{
+background:#0b1020;
+color:white;
+font-family:tahoma;
+padding:30px;
+}
+
+input,button{
+width:100%;
+padding:12px;
+margin:10px 0;
+border-radius:10px;
+border:0;
+}
+
+button{
+background:#8b5cf6;
+color:white;
+font-size:18px;
+cursor:pointer;
+}
+</style>
+
+</head>
+
+<body>
+
+<h1>🎵 ساخت آهنگ موزیک لند</h1>
+
+<input id="name" placeholder="اسم آهنگ">
+
+<input id="artist" placeholder="خواننده">
+
+<input id="mp3" placeholder="اسم فایل mp3">
+
+<input id="cover" placeholder="اسم کاور">
+
+<button onclick="make()">ساخت کد</button>
+
+
+<textarea id="out" style="height:400px"></textarea>
+
+
+<script>
+
+function make(){
+
+let name=document.getElementById("name").value;
+let artist=document.getElementById("artist").value;
+let mp3=document.getElementById("mp3").value;
+let cover=document.getElementById("cover").value;
+
+
+let code=`
+
+<a href="${mp3.replace(".mp3",".html")}" class="song-card">
+
+<div class="cover">
+
+<img src="${cover}">
+
+</div>
+
+<div class="song-info">
+
+<h3>${name}</h3>
+
+<p>${artist}</p>
+
+</div>
+
+</a>
+
+`;
+
+
+document.getElementById("out").value=code;
+
+}
+
+</script>
+
+
+</body>
+</html>
