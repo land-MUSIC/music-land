@@ -1,0 +1,391 @@
+```html
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>دانلود آهنگ سنگر | موزیک لند</title>
+
+<meta name="description" content="دانلود و پخش آنلاین آهنگ سنگر در موزیک لند.">
+
+<meta name="keywords" content="سنگر, دانلود آهنگ سنگر, موزیک لند">
+
+<meta name="robots" content="index, follow">
+
+<style>
+
+:root{
+--bg:#0b1020;
+--card:#151d35;
+--purple:#8b5cf6;
+--pink:#ec4899;
+--muted:#aab3ca;
+}
+
+*{
+box-sizing:border-box;
+}
+
+body{
+margin:0;
+font-family:Tahoma,Arial,sans-serif;
+
+background:
+radial-gradient(circle at top right,rgba(139,92,246,.18),transparent 35%),
+radial-gradient(circle at bottom left,rgba(236,72,153,.12),transparent 35%),
+var(--bg);
+
+color:white;
+min-height:100vh;
+}
+
+header{
+padding:18px 20px;
+background:rgba(11,16,32,.85);
+border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.logo{
+font-size:25px;
+font-weight:bold;
+max-width:1100px;
+margin:auto;
+}
+
+.logo span{
+color:var(--purple);
+}
+
+.container{
+max-width:900px;
+margin:40px auto;
+padding:20px 20px 120px;
+}
+
+.song-box{
+background:linear-gradient(145deg,#151d35,#10172b);
+border-radius:20px;
+overflow:hidden;
+}
+
+.cover{
+height:300px;
+background:#080d1a;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:90px;
+}
+
+.info{
+padding:30px;
+text-align:center;
+}
+
+h1{
+font-size:30px;
+}
+
+.artist{
+color:var(--muted);
+font-size:17px;
+margin-bottom:20px;
+}
+
+audio{
+width:100%;
+margin:15px 0;
+}
+
+.download{
+display:inline-block;
+padding:13px 28px;
+border-radius:12px;
+background:linear-gradient(135deg,var(--purple),var(--pink));
+color:white;
+text-decoration:none;
+font-weight:bold;
+}
+
+.description{
+margin-top:30px;
+color:var(--muted);
+line-height:2;
+text-align:right;
+}
+
+.back{
+display:inline-block;
+margin-top:25px;
+color:white;
+}
+
+.player{
+position:fixed;
+bottom:0;
+left:0;
+right:0;
+background:rgba(11,16,32,.95);
+padding:10px;
+}
+
+.player audio{
+max-width:900px;
+display:block;
+margin:auto;
+}
+
+/* کامنت ها */
+
+.comments{
+max-width:900px;
+margin:30px auto 120px;
+background:#151d35;
+padding:25px;
+border-radius:20px;
+}
+
+.comments input,
+.comments textarea{
+width:100%;
+padding:12px;
+margin:10px 0;
+background:#0b1020;
+color:white;
+border:0;
+border-radius:10px;
+}
+
+.comments textarea{
+height:100px;
+}
+
+.comments button{
+background:#8b5cf6;
+color:white;
+border:0;
+padding:12px 25px;
+border-radius:20px;
+cursor:pointer;
+}
+
+.comment{
+margin-top:15px;
+padding:15px;
+background:#1c2745;
+border-radius:12px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+🎵 موزیک<span>‌لند</span>
+</div>
+
+</header>
+
+
+<main class="container">
+
+<div class="song-box">
+
+<div class="cover">
+🎵
+</div>
+
+
+<div class="info">
+
+<h1>
+دانلود آهنگ سنگر
+</h1>
+
+<div class="artist">
+موزیک لند
+</div>
+
+
+<audio controls>
+
+<source src="Ham Sangar music-land.mp3" type="audio/mpeg">
+
+مرورگر شما از پخش فایل صوتی پشتیبانی نمی‌کند.
+
+</audio>
+
+
+<a class="download" href="Ham Sangar music-land.mp3" download>
+
+⬇️ دانلود آهنگ
+
+</a>
+
+
+<div class="description">
+
+<h2>
+دانلود آهنگ سنگر
+</h2>
+
+<p>
+آهنگ «سنگر» را در موزیک لند آنلاین گوش دهید و دانلود کنید.
+</p>
+
+</div>
+
+
+<a class="back" href="index.html">
+
+← بازگشت به موزیک لند
+
+</a>
+
+</div>
+
+</div>
+
+</main>
+
+
+<!-- بخش کامنت‌ها -->
+
+<div class="comments">
+
+<p style="color:#aab3ca; font-size:14px;">
+
+⚠️ برای ارسال کامنت، لطفاً با VPN وارد شوید.
+
+</p>
+
+<h2>💬 نظرات کاربران</h2>
+
+<input id="commentName" placeholder="نام شما">
+
+<textarea id="commentText" placeholder="نظر خود را بنویسید"></textarea>
+
+<button id="sendComment">
+ارسال نظر
+</button>
+
+<div id="commentsList"></div>
+
+</div>
+
+
+<script type="module">
+
+import { initializeApp }
+from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+
+import {
+getDatabase,
+ref,
+push,
+onValue
+}
+from "https://www.gstatic.com/firebasejs/12.19.0/firebase-database.js";
+
+
+const firebaseConfig = {
+
+apiKey: "AIzaSyAY-zwzfne1aggVQ25zbDhyrBFZPsYInUc",
+
+authDomain: "musicland-5628a.firebaseapp.com",
+
+databaseURL: "https://musicland-5628a-default-rtdb.firebaseio.com",
+
+projectId: "musicland-5628a",
+
+storageBucket: "musicland-5628a.firebasestorage.app",
+
+messagingSenderId: "684294755825",
+
+appId: "1:684294755825:web:61c0350aca2d5da53fa050"
+
+};
+
+
+const app = initializeApp(firebaseConfig);
+
+const db = getDatabase(app);
+
+console.log("صفحه آهنگ سنگر و کامنت وصل شد ✅");
+
+
+const commentsRef = ref(
+db,
+"comments/Ham_Sangar_music_land"
+);
+
+
+document
+.getElementById("sendComment")
+.onclick = ()=>{
+
+let name =
+document.getElementById("commentName").value;
+
+let text =
+document.getElementById("commentText").value;
+
+
+if(name && text){
+
+push(commentsRef,{
+name:name,
+text:text
+});
+
+document.getElementById("commentText").value="";
+
+}
+
+};
+
+
+onValue(commentsRef,(snapshot)=>{
+
+const list =
+document.getElementById("commentsList");
+
+list.innerHTML="";
+
+
+snapshot.forEach((item)=>{
+
+let data=item.val();
+
+
+list.innerHTML += `
+
+<div class="comment">
+
+<b>${data.name}</b>
+
+<br>
+
+${data.text}
+
+</div>
+
+`;
+
+});
+
+});
+
+</script>
+
+</body>
+
+</html>
+```
