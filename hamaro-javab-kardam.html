@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>دانلود آهنگ همه رو جواب کردم | موزیک لند</title>
+
+<meta name="description" content="دانلود و پخش آنلاین آهنگ همه رو جواب کردم در موزیک لند.">
+
+<style>
+
+:root {
+    --bg: #0b1020;
+    --card: #151d35;
+    --purple: #8b5cf6;
+    --pink: #ec4899;
+    --text: #ffffff;
+    --muted: #aab3ca;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Tahoma, Arial, sans-serif;
+    background:
+        radial-gradient(circle at top right, #25205a 0, transparent 35%),
+        var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Header */
+
+header {
+    background: rgba(11,16,32,.9);
+    border-bottom: 1px solid rgba(255,255,255,.08);
+    padding: 20px;
+    text-align: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: var(--pink);
+}
+
+/* Main */
+
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.song-box {
+    background: linear-gradient(145deg, #151d35, #10172b);
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 24px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(0,0,0,.25);
+}
+
+/* Cover */
+
+.cover {
+    width: 100%;
+    max-width: 450px;
+    height: 450px;
+    margin: 0 auto 25px;
+    border-radius: 20px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #312e81, #831843);
+}
+
+.cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    background: #080d1a;
+}
+
+/* Title */
+
+h1 {
+    margin: 10px 0;
+    font-size: 30px;
+}
+
+.artist {
+    color: var(--muted);
+    margin-bottom: 25px;
+}
+
+/* Player */
+
+audio {
+    width: 100%;
+    margin: 15px 0 25px;
+}
+
+/* Download */
+
+.download {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--purple), var(--pink));
+    color: white;
+    padding: 13px 25px;
+    border-radius: 12px;
+    font-weight: bold;
+    transition: .25s;
+}
+
+.download:hover {
+    transform: translateY(-3px);
+}
+
+/* Description */
+
+.description {
+    margin-top: 30px;
+    padding: 20px;
+    background: rgba(255,255,255,.04);
+    border-radius: 15px;
+    color: var(--muted);
+    line-height: 2;
+}
+
+/* Back */
+
+.back {
+    display: inline-block;
+    margin-top: 25px;
+    color: #c4b5fd;
+}
+
+/* Comments */
+
+.comments {
+    margin-top: 35px;
+    text-align: right;
+}
+
+.comments h2 {
+    margin-bottom: 15px;
+}
+
+.warning {
+    background: rgba(236,72,153,.1);
+    border: 1px solid rgba(236,72,153,.3);
+    color: #f9a8d4;
+    padding: 12px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.comment-form {
+    background: rgba(255,255,255,.03);
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.comment-form input,
+.comment-form textarea {
+    width: 100%;
+    margin-bottom: 12px;
+    padding: 13px;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,.08);
+    background: #0f172a;
+    color: white;
+    font-family: inherit;
+    outline: none;
+}
+
+.comment-form textarea {
+    min-height: 110px;
+    resize: vertical;
+}
+
+.comment-form input:focus,
+.comment-form textarea:focus {
+    border-color: var(--purple);
+}
+
+.comment-form button {
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(135deg, var(--purple), var(--pink));
+    color: white;
+    padding: 12px 22px;
+    border-radius: 10px;
+    font-family: inherit;
+    font-weight: bold;
+}
+
+.comment {
+    background: rgba(255,255,255,.04);
+    border-radius: 12px;
+    padding: 15px;
+    margin-top: 12px;
+}
+
+.comment-name {
+    font-weight: bold;
+    margin-bottom: 7px;
+}
+
+.comment-text {
+    color: var(--muted);
+    line-height: 1.8;
+    white-space: pre-wrap;
+}
+
+/* Responsive */
+
+@media(max-width:600px) {
+
+    .container {
+        margin: 20px auto;
+        padding: 12px;
+    }
+
+    .cover {
+        height: 330px;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        🎵 موزیک<span>‌لند</span>
+    </div>
+
+</header>
+
+
+<div class="container">
+
+    <div class="song-box">
+
+        <!-- کاور آهنگ -->
+        <div class="cover">
+
+            <img src="javab kardam.jpg"
+                 alt="کاور آهنگ همه رو جواب کردم">
+
+        </div>
+
+
+        <!-- اطلاعات آهنگ -->
+
+        <h1>همه رو جواب کردم</h1>
+
+        <div class="artist">
+            🎤 موزیک لند
+        </div>
+
+
+        <!-- پخش آهنگ -->
+
+        <audio controls>
+
+            <source src="Hamaro Javab Kardam music-land.mp3"
+                    type="audio/mpeg">
+
+            مرورگر شما از پخش آهنگ پشتیبانی نمی‌کند.
+
+        </audio>
+
+
+        <!-- دانلود -->
+
+        <a class="download"
+           href="Hamaro Javab Kardam music-land.mp3"
+           download>
+
+            ⬇️ دانلود آهنگ
+
+        </a>
+
+
+        <!-- توضیحات -->
+
+        <div class="description">
+
+            🎵 آهنگ «همه رو جواب کردم» را در موزیک لند
+            آنلاین گوش دهید و با کیفیت مناسب دانلود کنید.
+
+        </div>
+
+
+        <!-- کامنت -->
+
+        <div class="comments">
+
+            <h2>💬 نظرات کاربران</h2>
+
+            <div class="warning">
+                ⚠️ برای ارسال کامنت، لطفاً با VPN وارد شوید.
+            </div>
+
+
+            <div class="comment-form">
+
+                <input
+                    id="commentName"
+                    type="text"
+                    placeholder="نام شما">
+
+                <textarea
+                    id="commentText"
+                    placeholder="نظر خود را بنویسید..."></textarea>
+
+                <button id="sendComment">
+                    ارسال کامنت
+                </button>
+
+            </div>
+
+
+            <div id="commentsList"></div>
+
+        </div>
+
+
+        <!-- بازگشت -->
+
+        <a class="back" href="index.html">
+            ← بازگشت به موزیک لند
+        </a>
+
+    </div>
+
+</div>
+
+
+<script type="module">
+
+import { initializeApp }
+from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+
+import {
+    getDatabase,
+    ref,
+    push,
+    onValue
+}
+from "https://www.gstatic.com/firebasejs/12.19.0/firebase-database.js";
+
+
+const firebaseConfig = {
+
+    apiKey: "AIzaSyAY-zwzfne1aggVQ25zbDhyrBFZPsYInUc",
+
+    authDomain: "musicland-5628a.firebaseapp.com",
+
+    databaseURL:
+        "https://musicland-5628a-default-rtdb.firebaseio.com",
+
+    projectId: "musicland-5628a",
+
+    storageBucket:
+        "musicland-5628a.firebasestorage.app",
+
+    messagingSenderId:
+        "684294755825",
+
+    appId:
+        "1:684294755825:web:61c0350aca2d5da53fa050",
+
+    measurementId:
+        "G-5H9G2YC3KT"
+};
+
+
+const app = initializeApp(firebaseConfig);
+
+const db = getDatabase(app);
+
+
+/* مسیر اختصاصی کامنت‌های این آهنگ */
+
+const commentsRef =
+    ref(db, "comments/Hamaro_Javab_Kardam");
+
+
+const nameInput =
+    document.getElementById("commentName");
+
+const textInput =
+    document.getElementById("commentText");
+
+const sendButton =
+    document.getElementById("sendComment");
+
+const commentsList =
+    document.getElementById("commentsList");
+
+
+/* ارسال کامنت */
+
+sendButton.addEventListener("click", () => {
+
+    const name =
+        nameInput.value.trim();
+
+    const text =
+        textInput.value.trim();
+
+
+    if (!name || !text) {
+
+        alert("لطفاً نام و متن کامنت را وارد کنید.");
+
+        return;
+
+    }
+
+
+    push(commentsRef, {
+
+        name: name,
+
+        text: text,
+
+        time: Date.now()
+
+    });
+
+
+    nameInput.value = "";
+
+    textInput.value = "";
+
+});
+
+
+/* نمایش کامنت‌ها */
+
+onValue(commentsRef, (snapshot) => {
+
+    commentsList.innerHTML = "";
+
+
+    snapshot.forEach((childSnapshot) => {
+
+        const comment =
+            childSnapshot.val();
+
+
+        const div =
+            document.createElement("div");
+
+        div.className = "comment";
+
+
+        const name =
+            document.createElement("div");
+
+        name.className = "comment-name";
+
+        name.textContent =
+            "👤 " + (comment.name || "کاربر");
+
+
+        const text =
+            document.createElement("div");
+
+        text.className = "comment-text";
+
+        text.textContent =
+            comment.text || "";
+
+
+        div.appendChild(name);
+
+        div.appendChild(text);
+
+        commentsList.appendChild(div);
+
+    });
+
+});
+
+
+console.log("Firebase وصل شد ✅");
+
+</script>
+
+</body>
+</html>
