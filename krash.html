@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>دانلود آهنگ کراش دارم | موزیک لند</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:Tahoma,Arial,sans-serif;
+    min-height:100vh;
+    background:linear-gradient(135deg,#12001f,#25003d,#100018);
+    color:#fff;
+    padding-bottom:40px;
+}
+
+header{
+    background:rgba(20,0,35,.95);
+    border-bottom:1px solid #7b2cbf;
+    padding:18px 25px;
+    text-align:center;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:bold;
+}
+
+.container{
+    width:92%;
+    max-width:700px;
+    margin:40px auto;
+}
+
+.song-box,
+.comments-box{
+    background:rgba(21,29,53,.95);
+    border:1px solid #7b2cbf;
+    border-radius:20px;
+    padding:25px;
+    box-shadow:0 10px 35px rgba(0,0,0,.35);
+}
+
+.song-box{
+    text-align:center;
+}
+
+.cover{
+    width:220px;
+    height:220px;
+    margin:0 auto 25px;
+    border-radius:18px;
+    overflow:hidden;
+}
+
+.cover img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+h1{
+    font-size:28px;
+    margin-bottom:10px;
+}
+
+.artist{
+    color:#aab3ca;
+    margin-bottom:25px;
+}
+
+audio{
+    width:100%;
+    margin-bottom:20px;
+}
+
+.download{
+    display:block;
+    text-decoration:none;
+    color:#fff;
+    font-weight:bold;
+    padding:14px;
+    border-radius:12px;
+    background:linear-gradient(90deg,#8b5cf6,#ec4899);
+    transition:.2s;
+}
+
+.download:hover{
+    transform:scale(1.02);
+}
+
+.back{
+    display:block;
+    color:#c4b5fd;
+    text-decoration:none;
+    margin-top:20px;
+}
+
+.comments-box{
+    margin-top:25px;
+}
+
+.comments-box h2{
+    margin-bottom:20px;
+}
+
+input,
+textarea{
+    width:100%;
+    background:#0b1020;
+    color:#fff;
+    border:1px solid #3b4260;
+    border-radius:10px;
+    padding:12px;
+    margin-bottom:12px;
+    font-family:inherit;
+}
+
+textarea{
+    min-height:100px;
+    resize:vertical;
+}
+
+button{
+    width:100%;
+    border:0;
+    border-radius:10px;
+    padding:13px;
+    background:linear-gradient(90deg,#8b5cf6,#ec4899);
+    color:#fff;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.warning{
+    color:#fbbf24;
+    font-size:13px;
+    margin-top:12px;
+}
+
+.comment{
+    background:#1c2745;
+    border-radius:12px;
+    padding:15px;
+    margin-top:12px;
+}
+
+.comment-name{
+    font-weight:bold;
+    color:#c4b5fd;
+    margin-bottom:6px;
+}
+
+.comment-date{
+    color:#8f9ab5;
+    font-size:12px;
+    margin-top:8px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">🎵 موزیک‌لند</div>
+</header>
+
+<div class="container">
+
+    <div class="song-box">
+
+        <div class="cover">
+            <img src="krash.jpg" alt="کاور آهنگ کراش دارم">
+        </div>
+
+        <h1>کراش دارم</h1>
+
+        <p class="artist">موزیک لند</p>
+
+        <audio controls>
+            <source src="Krash.mp3" type="audio/mpeg">
+            مرورگر شما از پخش آهنگ پشتیبانی نمی‌کند.
+        </audio>
+
+        <a class="download" href="Krash.mp3" download>
+            ⬇️ دانلود آهنگ
+        </a>
+
+        <a class="back" href="index.html">
+            ← بازگشت به موزیک لند
+        </a>
+
+    </div>
+
+    <div class="comments-box">
+
+        <h2>💬 نظرات</h2>
+
+        <input id="name" type="text" placeholder="نام شما">
+
+        <textarea id="comment" placeholder="نظر خود را بنویسید..."></textarea>
+
+        <button id="sendComment">
+            ارسال کامنت
+        </button>
+
+        <p class="warning">
+            ⚠️ برای ارسال کامنت، لطفاً با VPN وارد شوید.
+        </p>
+
+        <div id="commentsList"></div>
+
+    </div>
+
+</div>
+
+<script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+import {
+    getDatabase,
+    ref,
+    push,
+    onValue
+} from "https://www.gstatic.com/firebasejs/12.19.0/firebase-database.js";
+
+const firebaseConfig = {
+    apiKey: "AIzaSyAY-zwzfne1aggVQyrBFZPsYInUc",
+    authDomain: "musicland-5628a.firebaseapp.com",
+    databaseURL: "https://musicland-5628a-default-rtdb.firebaseio.com",
+    projectId: "musicland-5628a",
+    storageBucket: "musicland-5628a.firebasestorage.app",
+    messagingSenderId: "684294755825",
+    appId: "1:684294755825:web:61c0350aca2d5da53fa050",
+    measurementId: "G-5H9G2YC3KT"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getDatabase(app);
+
+const commentsRef = ref(db, "comments/Krash");
+
+const nameInput = document.getElementById("name");
+const commentInput = document.getElementById("comment");
+const sendButton = document.getElementById("sendComment");
+const commentsList = document.getElementById("commentsList");
+
+sendButton.addEventListener("click", async () => {
+
+    const name = nameInput.value.trim();
+    const comment = commentInput.value.trim();
+
+    if (!name || !comment) {
+        alert("لطفاً نام و کامنت را وارد کنید.");
+        return;
+    }
+
+    try {
+
+        await push(commentsRef, {
+            name: name,
+            comment: comment,
+            date: new Date().toLocaleString("fa-IR")
+        });
+
+        nameInput.value = "";
+        commentInput.value = "";
+
+    } catch (error) {
+
+        alert("ارسال کامنت انجام نشد.");
+
+        console.error(error);
+    }
+});
+
+onValue(commentsRef, (snapshot) => {
+
+    commentsList.innerHTML = "";
+
+    const data = snapshot.val();
+
+    if (!data) {
+        commentsList.innerHTML =
+            "<p style='color:#aab3ca'>هنوز کامنتی ثبت نشده.</p>";
+        return;
+    }
+
+    Object.values(data).reverse().forEach(item => {
+
+        const box = document.createElement("div");
+        box.className = "comment";
+
+        const name = document.createElement("div");
+        name.className = "comment-name";
+        name.textContent = item.name;
+
+        const text = document.createElement("div");
+        text.textContent = item.comment;
+
+        const date = document.createElement("div");
+        date.className = "comment-date";
+        date.textContent = item.date;
+
+        box.appendChild(name);
+        box.appendChild(text);
+        box.appendChild(date);
+
+        commentsList.appendChild(box);
+    });
+});
+
+</script>
+
+</body>
+</html>
