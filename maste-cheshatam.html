@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>دانلود آهنگ Maste Cheshatam | موزیک لند</title>
+
+<style>
+:root{
+    --bg:#0b1020;
+    --card:#151d35;
+    --card2:#1c2745;
+    --purple:#8b5cf6;
+    --pink:#ec4899;
+    --text:#fff;
+    --muted:#aab3ca;
+}
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    background:linear-gradient(135deg,#12001f,#25003d,#100018);
+    color:var(--text);
+    font-family:Tahoma,Arial,sans-serif;
+    min-height:100vh;
+}
+
+header{
+    background:rgba(20,0,35,.95);
+    border-bottom:1px solid #7b2cbf;
+    padding:18px;
+    text-align:center;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:bold;
+}
+
+.container{
+    max-width:800px;
+    margin:40px auto;
+    padding:20px;
+}
+
+.song-box,
+.comments-box{
+    background:var(--card);
+    border:1px solid #7b2cbf;
+    border-radius:20px;
+    padding:30px;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,.35);
+}
+
+.no-cover{
+    width:220px;
+    height:220px;
+    margin:0 auto 25px;
+    border-radius:18px;
+    background:var(--card2);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:70px;
+}
+
+h1{
+    margin-bottom:10px;
+}
+
+.artist{
+    color:var(--muted);
+    margin-bottom:25px;
+}
+
+audio{
+    width:100%;
+    margin:20px 0;
+}
+
+.download{
+    display:inline-block;
+    background:linear-gradient(135deg,var(--purple),var(--pink));
+    color:white;
+    text-decoration:none;
+    padding:13px 25px;
+    border-radius:12px;
+    font-weight:bold;
+}
+
+.back{
+    display:block;
+    margin-top:25px;
+    color:#c4b5fd;
+    text-decoration:none;
+}
+
+/* comments */
+
+.comments-box{
+    margin-top:25px;
+    text-align:right;
+}
+
+.comments-box h2{
+    margin-bottom:20px;
+}
+
+.warning{
+    color:#fbbf24;
+    margin-bottom:15px;
+    font-size:14px;
+}
+
+#commentForm{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+#commentForm input,
+#commentForm textarea{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:10px;
+    background:var(--card2);
+    color:white;
+    font-family:inherit;
+}
+
+#commentForm textarea{
+    min-height:100px;
+    resize:vertical;
+}
+
+#commentForm button{
+    border:none;
+    padding:12px;
+    border-radius:10px;
+    background:linear-gradient(135deg,var(--purple),var(--pink));
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.comment{
+    background:var(--card2);
+    padding:15px;
+    border-radius:12px;
+    margin-top:12px;
+}
+
+.comment-name{
+    font-weight:bold;
+    margin-bottom:7px;
+}
+
+.comment-text{
+    color:#ddd;
+    white-space:pre-wrap;
+}
+
+.comment-date{
+    color:var(--muted);
+    font-size:11px;
+    margin-top:8px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">🎵 موزیک‌لند</div>
+</header>
+
+<div class="container">
+
+    <div class="song-box">
+
+        <div class="no-cover">🎵</div>
+
+        <h1>Maste Cheshatam</h1>
+
+        <p class="artist">موزیک لند</p>
+
+        <audio controls>
+            <source src="Maste Cheshatam .mp3" type="audio/mpeg">
+            مرورگر شما از پخش آهنگ پشتیبانی نمی‌کند.
+        </audio>
+
+        <br>
+
+        <a class="download"
+           href="Maste Cheshatam .mp3"
+           download>
+            ⬇️ دانلود آهنگ
+        </a>
+
+        <a class="back" href="index.html">
+            ← بازگشت به موزیک لند
+        </a>
+
+    </div>
+
+    <div class="comments-box">
+
+        <h2>💬 نظرات</h2>
+
+        <p class="warning">
+            ⚠️ برای ارسال کامنت، لطفاً با VPN وارد شوید.
+        </p>
+
+        <form id="commentForm">
+
+            <input
+                type="text"
+                id="name"
+                placeholder="نام شما"
+                required
+            >
+
+            <textarea
+                id="comment"
+                placeholder="نظر خود را بنویسید..."
+                required
+            ></textarea>
+
+            <button type="submit">
+                ارسال نظر
+            </button>
+
+        </form>
+
+        <div id="commentsList"></div>
+
+    </div>
+
+</div>
+
+<script type="module">
+
+import { initializeApp }
+from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+
+import {
+    getDatabase,
+    ref,
+    push,
+    onValue
+}
+from "https://www.gstatic.com/firebasejs/12.19.0/firebase-database.js";
+
+
+const firebaseConfig = {
+    apiKey: "AIzaSyAY-zwzfne1aggVQyrBFZPsYInUc",
+    authDomain: "musicland-5628a.firebaseapp.com",
+    databaseURL: "https://musicland-5628a-default-rtdb.firebaseio.com",
+    projectId: "musicland-5628a",
+    storageBucket: "musicland-5628a.firebasestorage.app",
+    messagingSenderId: "684294755825",
+    appId: "1:684294755825:web:61c0350aca2d5da53fa050",
+    measurementId: "G-5H9G2YC3KT"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getDatabase(app);
+
+const commentsRef = ref(
+    db,
+    "comments/Maste_Cheshatam"
+);
+
+const form = document.getElementById("commentForm");
+const commentsList = document.getElementById("commentsList");
+
+form.addEventListener("submit", async (e) => {
+
+    e.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const comment = document.getElementById("comment").value.trim();
+
+    if (!name || !comment) return;
+
+    await push(commentsRef, {
+        name: name,
+        comment: comment,
+        date: new Date().toLocaleString("fa-IR")
+    });
+
+    form.reset();
+});
+
+onValue(commentsRef, (snapshot) => {
+
+    commentsList.innerHTML = "";
+
+    const data = snapshot.val();
+
+    if (!data) {
+        commentsList.innerHTML =
+            "<p style='color:#aab3ca;margin-top:20px'>هنوز نظری ثبت نشده است.</p>";
+        return;
+    }
+
+    Object.values(data).reverse().forEach(item => {
+
+        const div = document.createElement("div");
+        div.className = "comment";
+
+        const name = document.createElement("div");
+        name.className = "comment-name";
+        name.textContent = item.name;
+
+        const text = document.createElement("div");
+        text.className = "comment-text";
+        text.textContent = item.comment;
+
+        const date = document.createElement("div");
+        date.className = "comment-date";
+        date.textContent = item.date || "";
+
+        div.appendChild(name);
+        div.appendChild(text);
+        div.appendChild(date);
+
+        commentsList.appendChild(div);
+    });
+});
+
+</script>
+
+</body>
+</html>
